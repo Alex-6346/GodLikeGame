@@ -116,10 +116,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="fixing some bugs in moving&#10;1) Player can't double jump&#10;2) Player can1t go through blocks" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="424" y="0" key="CommitChangelistDialog2" timestamp="1591893582903">
+    <state x="424" y="0" key="CommitChangelistDialog2" timestamp="1591893624786">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="424" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591893582903" />
+    <state x="424" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591893624786" />
     <state x="651" y="307" width="258" height="210" key="Github.ShareDialog" timestamp="1591869829062">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -160,10 +160,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591893120329" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1591893161410">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1591893591481">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591893161410" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591893591481" />
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591892895633">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

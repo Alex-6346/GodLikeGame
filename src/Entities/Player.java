@@ -10,23 +10,29 @@ import java.awt.event.KeyEvent;
 public class Player {
 
     private boolean right = false, left = false, jumping = false, falling = false;
+    private boolean topCollision =  false;
+
+
+
     private double x,y;
     private int width,height;
 
     private double moveSpeed = 1;
 
-    private double jumpSpeed = 40;
+    private Image player;
+    private double jumpSpeed = 20;
     private double currentJumpSpeed = jumpSpeed;
 
     private double maxFallSpeed = 5;
     private double currentFallSpeed = 0.1;
 
 
-    public Player(int width, int height) {
-        x = Main.frame.getWidth()/2;
-        y = Main.frame.getHeight()/2;
+    public Player(Image player, int width, int height, int x, int y) {
+        this.player = player;
         this.width = width;
         this.height = height;
+        this.x = x;
+        this.y = y;
     }
 
     public void tick(Block[]b) {
@@ -36,6 +42,9 @@ public class Player {
         for(int i=0; i<b.length; i++){
             //collision while moving right
             if(Collision.playerBlock(new Point(iX+width,iY), b[i]) ||
+                    Collision.playerBlock(new Point(iX+width,iY+1/4*height), b[i]) ||
+                    Collision.playerBlock(new Point(iX+width,iY+1/2*height), b[i]) ||
+                    Collision.playerBlock(new Point(iX+width,iY+3/4*height), b[i]) ||
                     Collision.playerBlock(new Point(iX+width,iY+height-3), b[i])) {
                 right = false;
             }
@@ -43,6 +52,9 @@ public class Player {
             //collision while moving left
 
             if(Collision.playerBlock(new Point(iX,iY), b[i]) ||
+                    Collision.playerBlock(new Point(iX,iY+1/4*height), b[i]) ||
+                    Collision.playerBlock(new Point(iX,iY+1/2*height), b[i]) ||
+                    Collision.playerBlock(new Point(iX,iY+3/4*height), b[i]) ||
                     Collision.playerBlock(new Point(iX,iY+height-3), b[i])) {
                 left = false;
             }
@@ -59,6 +71,7 @@ public class Player {
             //collision while falling
 
             if(Collision.playerBlock(new Point(iX,iY+height+1), b[i]) ||
+                    Collision.playerBlock(new Point(iX+width/2,iY+height+1), b[i]) ||
                     Collision.playerBlock(new Point(iX+width,iY+height+1), b[i])) {
                 falling = false;
                 break;
@@ -101,8 +114,7 @@ public class Player {
 
 
     public void draw(Graphics g) {
-        g.setColor(Color.BLACK);
-        g.fillRect((int)x,(int)y,width,height);
+        g.drawImage(player, (int)x,(int)y, null);
     }
 
     public void keyPressed(int key) {

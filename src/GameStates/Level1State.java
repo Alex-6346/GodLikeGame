@@ -3,13 +3,14 @@ package GameStates;
 import Entities.Player;
 import Objects.Block;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
 public class Level1State extends GameState {
 
-    private Player player = new Player(20,20);;
-    private Block[] b = new Block[]{new Block(750,750), new Block(850,850), new  Block(950,950)};
+    private Player player;
+    private Block[] b;
 
 
     public Level1State(GameStateManager gsm){
@@ -18,7 +19,8 @@ public class Level1State extends GameState {
 
     @Override
     public void init() {
-        player = new Player(20,20);
+        Image playerImage = new ImageIcon("images/person.jpg").getImage();
+        player = new Player(playerImage, playerImage.getWidth(null), playerImage.getHeight(null), 600, 200);
 
         b = new Block[3];
 

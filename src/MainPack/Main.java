@@ -90,6 +90,7 @@ public class Main extends JPanel implements Runnable, KeyListener, MouseListener
         gameStateManager.tick();
     }
 
+
     @Override
     public void mouseClicked(MouseEvent e) {
         gameStateManager.mouseClicked(e);

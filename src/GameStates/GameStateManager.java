@@ -17,6 +17,7 @@ public class GameStateManager {
         states.peek().tick();
     }
 
+
     public  void draw(Graphics g){
         states.peek().draw(g);
     }

@@ -20,7 +20,7 @@ public class Level1State extends GameState {
     @Override
     public void init() {
         Image playerImage = new ImageIcon("images/person.jpg").getImage();
-        player = new Player(playerImage, playerImage.getWidth(null), playerImage.getHeight(null), 600, 200);
+        player = new Player(playerImage, playerImage.getWidth(null), playerImage.getHeight(null), 700, 200);
 
         b = new Block[3];
 
@@ -50,7 +50,7 @@ public class Level1State extends GameState {
 
     @Override
     public void keyPressed(int key) {
-        player.keyPressed(key);
+        player.keyPressed(key, b);
     }
 
     @Override

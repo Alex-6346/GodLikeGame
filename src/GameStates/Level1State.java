@@ -24,10 +24,11 @@ public class Level1State extends GameState {
         Image playerImage = new ImageIcon("images/person.jpg").getImage();
         player = new Player(playerImage, playerImage.getWidth(null), playerImage.getHeight(null), 700, 200);
 
-        b = new Block[2];
+        b = new Block[3];
 
         b[0] = new Block(450,550, 500, 90);
         b[1] = new Block(932,410,200,10);
+        b[2] = new Block(450,380, 200, 150);
 
 
         l = new Ladder[1];
@@ -51,14 +52,14 @@ public class Level1State extends GameState {
     @Override
     public void draw(Graphics g) {
 
-        for(int i=0;i<b.length;i++){
-            b[i].draw(g);
-        }
-
         for(int i=0;i<l.length;i++){
             l[i].draw(g);
         }
         player.draw(g);
+
+        for(int i=0;i<b.length;i++){
+            b[i].draw(g);
+        }
     }
 
     @Override

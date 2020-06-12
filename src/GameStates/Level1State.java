@@ -1,7 +1,6 @@
 package GameStates;
 
 import Entities.Player;
-import Mapping.Map;
 import Objects.Block;
 
 import javax.swing.*;
@@ -11,7 +10,7 @@ import java.awt.event.MouseEvent;
 public class Level1State extends GameState {
 
     private Player player;
-    private Map map;
+    private Block[] b;
 
 
     public Level1State(GameStateManager gsm){
@@ -22,29 +21,36 @@ public class Level1State extends GameState {
     public void init() {
         Image playerImage = new ImageIcon("images/person.jpg").getImage();
         player = new Player(playerImage, playerImage.getWidth(null), playerImage.getHeight(null), 700, 200);
-        map = new Map("/map1.map");
 
+        b = new Block[3];
+
+        b[0] = new Block(750,450, 90, 90);
+        b[1] = new Block(850,550, 90, 90);
+        b[2] = new Block(950,650, 90, 90);
     }
 
     @Override
     public void tick() {
-        player.tick(map.getBlocks());
+        for(int i=0;i<b.length;i++){
+            b[i].tick();
+        }
+
+        player.tick(b);
 
     }
 
     @Override
     public void draw(Graphics g) {
         player.draw(g);
-        map.draw(g);
+
+        for(int i=0;i<b.length;i++){
+            b[i].draw(g);
+        }
     }
-
-
-
-
 
     @Override
     public void keyPressed(int key) {
-        player.keyPressed(key, map.getBlocks());
+        player.keyPressed(key, b);
     }
 
     @Override

@@ -35,65 +35,64 @@ public class Player {
         this.y = y;
     }
 
-    public void tick(Block[][] b) {
+    public void tick(Block[] b) {
         int iX = (int) x;
         int iY = (int) y;
         int iMaxFallSpeed = (int) maxFallSpeed;
 
         for (int i = 0; i < b.length; i++) {
-            for (int j = 0; j < b[0].length; j++) {
+            //collision while moving right
+            if (Collision.playerBlock(new Point(iX - 1 + width, iY), b[i]) ||
+                    Collision.playerBlock(new Point(iX - 1 + width, iY + height / 4), b[i]) ||
+                    Collision.playerBlock(new Point(iX - 1 + width, iY + height / 2), b[i]) ||
+                    Collision.playerBlock(new Point(iX - 1 + width, iY + 3 * height / 4), b[i]) ||
+                    Collision.playerBlock(new Point(iX - 1 + width, iY + height - 3), b[i])) {
+                right = false;
+            }
 
-                if (b[i][j].getID() != 0) {
+            //collision while moving left
 
-                    //collision while moving right
-                    if (Collision.playerBlock(new Point(iX - 1 + width, iY), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX - 1 + width, iY + height / 4), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX - 1 + width, iY + height / 2), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX - 1 + width, iY + 3 * height / 4), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX - 1 + width, iY + height - 3), b[i][j])) {
-                        right = false;
-                    }
+            if (Collision.playerBlock(new Point(iX + 1, iY), b[i]) ||
+                    Collision.playerBlock(new Point(iX - 1, iY + height / 4), b[i]) ||
+                    Collision.playerBlock(new Point(iX - 1, iY + height / 2), b[i]) ||
+                    Collision.playerBlock(new Point(iX - 1, iY + 3 * height / 4), b[i]) ||
+                    Collision.playerBlock(new Point(iX - 1, iY + height - 3), b[i])) {
+                left = false;
+            }
 
-                    //collision while moving left
+            //collision while jumping
 
-                    if (Collision.playerBlock(new Point(iX + 1, iY), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX - 1, iY + height / 4), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX - 1, iY + height / 2), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX - 1, iY + 3 * height / 4), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX - 1, iY + height - 3), b[i][j])) {
-                        left = false;
-                    }
-
-                    //collision while jumping
-
-                    if (Collision.playerBlock(new Point(iX, iY), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX + width, iY), b[i][j])) {
-                        jumping = false;
-                        falling = true;
-                    }
+            if (Collision.playerBlock(new Point(iX, iY), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width, iY), b[i])) {
+                jumping = false;
+                falling = true;
+            }
 
 
-                    //collision while falling
+            //collision while falling
 
-                    if (Collision.playerBlock(new Point(iX, iY + height + iMaxFallSpeed), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX + width / 2, iY + height + iMaxFallSpeed), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX + width, iY + height + iMaxFallSpeed), b[i][j])) {
-                        falling = false;
-                        break;
-                    } else {
-                        falling = true;
-                    }
-                }
+            if (Collision.playerBlock(new Point(iX, iY + height + iMaxFallSpeed), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width / 2, iY + height + iMaxFallSpeed), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width, iY + height + iMaxFallSpeed), b[i])) {
+                falling = false;
+                y = b[i].getY() - player.getHeight(null);
+                break;
+            } else {
+                falling = true;
             }
         }
 
-        if (right) {
 
-            x = x + moveSpeed;
+        if (right) {
+            if ((x + moveSpeed + player.getWidth(null)) < Main.frame.getWidth()) {
+                x = x + moveSpeed;
+            }
         }
 
         if (left) {
-            x = x - moveSpeed;
+            if ((x - moveSpeed) > 0) {
+                x = x - moveSpeed;
+            }
         }
 
         if (jumping) {
@@ -122,22 +121,19 @@ public class Player {
         g.drawImage(player, (int) x, (int) y, null);
     }
 
-    public void keyPressed(int key, Block[][] b) {
+    public void keyPressed(int key, Block[] b) {
         if (key == KeyEvent.VK_RIGHT) right = true;
         if (key == KeyEvent.VK_LEFT) left = true;
         if (key == KeyEvent.VK_UP) {
             for (int i = 0; i < b.length; i++) {
-                for (int j = 0; j < b[0].length; j++) {
-                    int iX = (int) x;
-                    int iY = (int) y;
-                    if (Collision.playerBlock(new Point(iX, iY + height + 7), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX + width / 2, iY + height + 7), b[i][j]) ||
-                            Collision.playerBlock(new Point(iX + width, iY + height + 7), b[i][j])) {
-                        jumping = true;
-                    }
+                int iX = (int) x;
+                int iY = (int) y;
+                if (Collision.playerBlock(new Point(iX, iY + height + 7), b[i]) ||
+                        Collision.playerBlock(new Point(iX + width / 2, iY + height + 7), b[i]) ||
+                        Collision.playerBlock(new Point(iX + width, iY + height + 7), b[i])) {
+                    jumping = true;
                 }
             }
-
 
         }
     }

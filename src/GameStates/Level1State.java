@@ -2,6 +2,7 @@ package GameStates;
 
 import Entities.Player;
 import Objects.Block;
+import Objects.Ladder;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +12,7 @@ public class Level1State extends GameState {
 
     private Player player;
     private Block[] b;
+    private Ladder[] l;
 
 
     public Level1State(GameStateManager gsm){
@@ -22,11 +24,14 @@ public class Level1State extends GameState {
         Image playerImage = new ImageIcon("images/person.jpg").getImage();
         player = new Player(playerImage, playerImage.getWidth(null), playerImage.getHeight(null), 700, 200);
 
-        b = new Block[3];
+        b = new Block[2];
 
-        b[0] = new Block(750,450, 90, 90);
-        b[1] = new Block(850,550, 90, 90);
-        b[2] = new Block(950,650, 90, 90);
+        b[0] = new Block(450,550, 500, 90);
+        b[1] = new Block(932,410,200,10);
+
+
+        l = new Ladder[1];
+        l[0] = new Ladder( 850,390,80,130);
     }
 
     @Override
@@ -35,22 +40,30 @@ public class Level1State extends GameState {
             b[i].tick();
         }
 
-        player.tick(b);
+        for(int i=0;i<l.length;i++){
+            l[i].tick();
+        }
+        player.tickLadder(l);
+        player.tickBlock(b);
 
     }
 
     @Override
     public void draw(Graphics g) {
-        player.draw(g);
 
         for(int i=0;i<b.length;i++){
             b[i].draw(g);
         }
+
+        for(int i=0;i<l.length;i++){
+            l[i].draw(g);
+        }
+        player.draw(g);
     }
 
     @Override
     public void keyPressed(int key) {
-        player.keyPressed(key, b);
+        player.keyPressed(key, b,l);
     }
 
     @Override

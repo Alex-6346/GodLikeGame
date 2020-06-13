@@ -1,6 +1,7 @@
 package Entities;
 
 import Objects.Block;
+import Objects.EObjects;
 import Objects.Ladder;
 
 import Physics.Collision;
@@ -16,13 +17,15 @@ public class Player {
     private boolean right = false, left = false, jumping = false, falling = false, upLadder = false, downLadder = false, halfCut = false, ctrlReleased = false;
     private boolean beingOnLadder = false;
     private boolean topCollision = false;
+    private boolean actionE = false;
+    private EObjects currentE;
 
 
     private double x, y;
     private int width, height;
     private int counterOfCtrl = 0;
 
-    private double moveSpeed = 1;
+    private double moveSpeed = 1.7;
 
     private Image player;
     private double jumpSpeed = 20;
@@ -71,9 +74,9 @@ public class Player {
             if (Collision.playerBlock(new Point(iX, iY), b[i]) ||
                     Collision.playerBlock(new Point(iX + width, iY), b[i])) {
                 jumping = false;
-              //if (!beingOnLadder) {
-                    falling = true;
-               // }
+                //if (!beingOnLadder) {
+                falling = true;
+                // }
             }
 
 
@@ -89,7 +92,7 @@ public class Player {
                 falling = false;
                 topCollision = true;
             } else {
-                if (!beingOnLadder&&!topCollision) {
+                if (!beingOnLadder && !topCollision) {
                     falling = true;
                 }
             }
@@ -113,6 +116,7 @@ public class Player {
                 y = y + height / 2;
                 counterOfCtrl++;
             }
+            moveSpeed = 1;
             player = new ImageIcon("images/personHalfCut.jpg").getImage();
             height = player.getHeight(null);
         }
@@ -121,6 +125,7 @@ public class Player {
                 y = y - height;
                 counterOfCtrl++;
             }
+            moveSpeed = 1.7;
             player = new ImageIcon("images/person.jpg").getImage();
             height = player.getHeight(null);
         }
@@ -152,7 +157,7 @@ public class Player {
     public void tickLadder(Ladder[] l) {
         int iX = (int) x;
         int iY = (int) y;
-        beingOnLadder=false;
+        beingOnLadder = false;
         for (int i = 0; i < l.length; i++) {
             if ((Collision.playerLadder(new Point(iX, iY), l[i]) &&
                     Collision.playerLadder(new Point(iX + width, iY), l[i])) ||
@@ -165,8 +170,8 @@ public class Player {
                 falling = false;
                 beingOnLadder = true;
             } else {
-               if(!beingOnLadder){
-                   falling=true;
+                if (!beingOnLadder) {
+                    falling = true;
                 }
             }
         }
@@ -181,12 +186,18 @@ public class Player {
 
     }
 
+    public void tickEObjects(EObjects[] e) {
+        if (actionE) {
+            currentE.setChangedImage();
+        }
+    }
+
 
     public void draw(Graphics g) {
         g.drawImage(player, (int) x, (int) y, null);
     }
 
-    public void keyPressed(int key, Block[] b, Ladder[] l) {
+    public void keyPressed(int key, Block[] b, Ladder[] l, EObjects[] e) {
         if (key == KeyEvent.VK_RIGHT) {
             right = true;
             upLadder = false;
@@ -216,6 +227,20 @@ public class Player {
                 }
             }
         }
+        if (key == KeyEvent.VK_E) {
+            for (int i = 0; i < e.length; i++) {
+                int iX = (int) x;
+                int iY = (int) y;
+                if (Collision.playerEObject(new Point(iX, iY), e[i]) ||
+                        Collision.playerEObject(new Point(iX + width / 2, iY), e[i]) ||
+                        Collision.playerEObject(new Point(iX + width, iY), e[i]) ||
+                        Collision.playerEObject(new Point(iX, iY + height - 2), e[i]) ||
+                        Collision.playerEObject(new Point(iX, iY + height / 2), e[i])) {
+                    actionE = true;
+                    currentE = e[0];
+                }
+            }
+        }
         if (key == KeyEvent.VK_UP) {
             if (falling == false) {
                 for (int i = 0; i < l.length; i++) {
@@ -228,7 +253,7 @@ public class Player {
                         upLadder = true;
                         beingOnLadder = true;
                     } else {
-                        if(!beingOnLadder) {
+                        if (!beingOnLadder) {
                             upLadder = false;
                         }
                     }
@@ -238,9 +263,9 @@ public class Player {
                     for (int i = 0; i < b.length; i++) {
                         int iX = (int) x;
                         int iY = (int) y;
-                        if (Collision.playerBlock(new Point(iX, iY + height + 7), b[i]) ||
+                        if ((Collision.playerBlock(new Point(iX, iY + height + 7), b[i]) ||
                                 Collision.playerBlock(new Point(iX + width / 2, iY + height + 7), b[i]) ||
-                                Collision.playerBlock(new Point(iX + width, iY + height + 7), b[i])) {
+                                Collision.playerBlock(new Point(iX + width, iY + height + 7), b[i])) && !halfCut) {
                             jumping = true;
                         }
                     }
@@ -272,8 +297,8 @@ public class Player {
                     downLadder = true;
                     beingOnLadder = true;
                 } else {
-                    if(!beingOnLadder){
-                        falling=true;
+                    if (!beingOnLadder) {
+                        falling = true;
                     }
                 }
             }

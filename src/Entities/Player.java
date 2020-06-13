@@ -235,7 +235,11 @@ public class Player {
                         Collision.playerEObject(new Point(iX + width / 2, iY), e[i]) ||
                         Collision.playerEObject(new Point(iX + width, iY), e[i]) ||
                         Collision.playerEObject(new Point(iX, iY + height - 2), e[i]) ||
-                        Collision.playerEObject(new Point(iX, iY + height / 2), e[i])) {
+                        Collision.playerEObject(new Point(iX + width / 2, iY + height - 2), e[i]) ||
+                        Collision.playerEObject(new Point(iX + width, iY + height - 2), e[i]) ||
+                        Collision.playerEObject(new Point(iX, iY + height / 2), e[i]) ||
+                        Collision.playerEObject(new Point(iX + width / 2, iY + height / 2), e[i]) ||
+                        Collision.playerEObject(new Point(iX + width, iY + height / 2), e[i])) {
                     actionE = true;
                     currentE = e[0];
                 }

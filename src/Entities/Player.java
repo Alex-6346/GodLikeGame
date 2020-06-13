@@ -71,9 +71,9 @@ public class Player {
             if (Collision.playerBlock(new Point(iX, iY), b[i]) ||
                     Collision.playerBlock(new Point(iX + width, iY), b[i])) {
                 jumping = false;
-                if (!beingOnLadder) {
+              //if (!beingOnLadder) {
                     falling = true;
-                }
+               // }
             }
 
 
@@ -152,20 +152,22 @@ public class Player {
     public void tickLadder(Ladder[] l) {
         int iX = (int) x;
         int iY = (int) y;
-
+        beingOnLadder=false;
         for (int i = 0; i < l.length; i++) {
             if ((Collision.playerLadder(new Point(iX, iY), l[i]) &&
                     Collision.playerLadder(new Point(iX + width, iY), l[i])) ||
 
                     (Collision.playerLadder(new Point(iX, iX + height / 2), l[i]) &&
-                            Collision.playerLadder(new Point(iX + width, iY + height * 2), l[i])) ||
+                            Collision.playerLadder(new Point(iX + width, iY + height / 2), l[i])) ||
 
                     (Collision.playerLadder(new Point(iX, iY + height - 2), l[i]) &&
                             Collision.playerLadder(new Point(iX + width, iY + height - 2), l[i]))) {
                 falling = false;
                 beingOnLadder = true;
             } else {
-                beingOnLadder = false;
+               if(!beingOnLadder){
+                   falling=true;
+                }
             }
         }
 
@@ -224,8 +226,11 @@ public class Player {
                             (Collision.playerLadder(new Point(iX, iY + height - 2), l[i]) &&
                                     Collision.playerLadder(new Point(iX + width, iY + height - 2), l[i]))) {
                         upLadder = true;
+                        beingOnLadder = true;
                     } else {
-                        upLadder = false;
+                        if(!beingOnLadder) {
+                            upLadder = false;
+                        }
                     }
                 }
 
@@ -265,6 +270,11 @@ public class Player {
                         Collision.playerLadder(new Point(iX, iY + height), l[i]) ||
                         Collision.playerLadder(new Point(iX + width, iY + height), l[i]) && !halfCut) {
                     downLadder = true;
+                    beingOnLadder = true;
+                } else {
+                    if(!beingOnLadder){
+                        falling=true;
+                    }
                 }
             }
         }

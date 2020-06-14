@@ -29,9 +29,9 @@ public class Level3State extends GameState {
         background = new ImageIcon("images/level3Background.jpg").getImage();
         Image eBefore = new ImageIcon("images/eBefore.jpg").getImage();
         Image eAfter = new ImageIcon("images/eAfter.jpg").getImage();
-        player = new Player(playerImage, playerImage.getWidth(null), playerImage.getHeight(null), 700, 200);
+        player = new Player(playerImage, playerImage.getWidth(null), playerImage.getHeight(null), 100, 350);
 
-        b = new Block[11];
+        b = new Block[12];
 
         b[0] = new Block(0, 0, 20, 850);
         b[1] = new Block(1380, 0, 20, 850);
@@ -47,14 +47,18 @@ public class Level3State extends GameState {
         b[8] = new Block(1110, 460, 10, 140);
         b[9] = new Block(800, 450, 165, 10);
         b[10] = new Block(965, 410, 25, 10);
+        b[11] = new Block(965, 210, 10, 170);
 
 
 
         l = new Ladder[1];
         l[0] = new Ladder(995, 365, 100, 220);
 
-        e = new EObjects[1];
-        e[0] = new EObjects(710, 680, eBefore, eAfter, "marker");
+        e = new EObjects[4];
+        e[0] = new EObjects(200, 340, eBefore, eAfter, true);
+        e[1] = new EObjects(1010, 330, eBefore, eAfter, false);
+        e[2] = new EObjects(850, 500, eBefore, eAfter, false);
+        e[3] = new EObjects(300, 160, eBefore, eAfter, false);
     }
 
     @Override
@@ -72,11 +76,18 @@ public class Level3State extends GameState {
         player.tickLadder(l);
         player.tickEObjects(e);
         player.tickBlock(b);
+
+        if(e[0].isActivated()){
+            b[11] = new Block(1390, 210, 10, 170);
+        }
+        if (e[3].isActivated()){
+            //TODO
+            //gameStateManager.states.push(new Level4State(gameStateManager));
+        }
     }
 
     @Override
     public void draw(Graphics g) {
-
         g.drawImage(background, 0, 0, null);
 
         for (int i = 0; i < e.length; i++) {

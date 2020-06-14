@@ -51,7 +51,7 @@ public class Level1State extends GameState {
         l[2] = new Ladder(703, 600, 90, 200);
 
         e = new EObjects[1];
-        e[0] = new EObjects(710, 480, eBefore, eAfter, "marker");
+        e[0] = new EObjects(710, 480, eBefore, eAfter, true);
     }
 
     @Override

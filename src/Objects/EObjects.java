@@ -8,14 +8,16 @@ public class EObjects {
     private Image changeImage;
     private int x;
     private int y;
-    private String marker;
+    private boolean activated;
+    private boolean readyForActivation;
 
-    public EObjects(int x, int y, Image image, Image changeImage, String marker) {
+    public EObjects(int x, int y, Image image, Image changeImage, boolean readyForActivation) {
+        this.readyForActivation = readyForActivation;
         this.x = x;
         this.y = y;
         this.image = image;
         this.changeImage = changeImage;
-        this.marker = marker;
+        activated = false;
     }
 
     public void tick() {
@@ -38,7 +40,19 @@ public class EObjects {
         image = changeImage;
     }
 
-    public String getMarker(){
-        return marker;
+    public void setActivated(boolean isActivated) {
+        activated = isActivated;
+    }
+
+    public void setReadyForActivation(boolean isReadyForActivation) {
+        readyForActivation = isReadyForActivation;
+    }
+
+    public boolean getReadyForActivation() {
+        return readyForActivation;
+    }
+
+    public boolean isActivated() {
+        return activated;
     }
 }

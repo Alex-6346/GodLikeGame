@@ -20,7 +20,7 @@ public class Player {
     public static boolean isLvl3 = false;
     public static boolean isLvl3Cellar = false;
     private boolean actionE = false;
-    private EObjects currentE;
+    private int currentE;
 
 
     private double x, y;
@@ -47,6 +47,7 @@ public class Player {
     }
 
     public void tickBlock(Block[] b) {
+
         int iX = (int) x;
         int iY = (int) y;
         int iMaxFallSpeed = (int) maxFallSpeed;
@@ -91,7 +92,6 @@ public class Player {
                     // }
                 }
             }
-
 
 
             //collision while falling
@@ -201,8 +201,12 @@ public class Player {
     }
 
     public void tickEObjects(EObjects[] e) {
-        if (actionE) {
-            currentE.setChangedImage();
+        if (actionE && e[currentE].getReadyForActivation()) {
+            e[currentE].setChangedImage();
+            e[currentE].setActivated(true);
+            if ((currentE + 1) < e.length) {
+                e[currentE + 1].setReadyForActivation(true);
+            }
         }
     }
 
@@ -255,7 +259,7 @@ public class Player {
                         Collision.playerEObject(new Point(iX + width / 2, iY + height / 2), e[i]) ||
                         Collision.playerEObject(new Point(iX + width, iY + height / 2), e[i])) {
                     actionE = true;
-                    currentE = e[0];
+                    currentE = i;
                 }
             }
         }

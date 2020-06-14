@@ -17,6 +17,4 @@ public class Block extends Rectangle {
         g.fillRect(x,y,width,height);
     }
 
-
-
 }

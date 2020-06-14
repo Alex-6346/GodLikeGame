@@ -17,6 +17,8 @@ public class Player {
     private boolean right = false, left = false, jumping = false, falling = false, upLadder = false, downLadder = false, halfCut = false, ctrlReleased = false;
     private boolean beingOnLadder = false;
     private boolean topCollision = false;
+    public static boolean isLvl3 = false;
+    public static boolean isLvl3Cellar = false;
     private boolean actionE = false;
     private EObjects currentE;
 
@@ -49,6 +51,15 @@ public class Player {
         int iY = (int) y;
         int iMaxFallSpeed = (int) maxFallSpeed;
 
+        if (isLvl3) {
+            if (iY <= 470 && iY >= 410) {
+                isLvl3Cellar = true;
+            } else {
+                isLvl3Cellar = false;
+            }
+
+        }
+
         for (int i = 0; i < b.length; i++) {
             //collision while moving right
             if (Collision.playerBlock(new Point(iX - 1 + width, iY), b[i]) ||
@@ -69,15 +80,18 @@ public class Player {
                 left = false;
             }
 
-            //collision while jumping
+            if (!isLvl3 || isLvl3Cellar) {
+                //collision while jumping
 
-            if (Collision.playerBlock(new Point(iX, iY), b[i]) ||
-                    Collision.playerBlock(new Point(iX + width, iY), b[i])) {
-                jumping = false;
-                //if (!beingOnLadder) {
-                falling = true;
-                // }
+                if (Collision.playerBlock(new Point(iX, iY), b[i]) ||
+                        Collision.playerBlock(new Point(iX + width, iY), b[i])) {
+                    jumping = false;
+                    //if (!beingOnLadder) {
+                    falling = true;
+                    // }
+                }
             }
+
 
 
             //collision while falling

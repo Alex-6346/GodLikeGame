@@ -1,5 +1,6 @@
 package MainPack;
 
+import GameStates.Level1State;
 import MainPack.Main;
 
 import javax.swing.JFrame;

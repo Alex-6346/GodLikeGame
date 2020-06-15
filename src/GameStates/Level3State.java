@@ -4,10 +4,12 @@ import Entities.Player;
 import Objects.Block;
 import Objects.EObjects;
 import Objects.Ladder;
+import Physics.Animation;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
 public class Level3State extends GameState {
 
@@ -25,11 +27,12 @@ public class Level3State extends GameState {
     @Override
     public void init() {
         Player.isLvl3 = true;
-        Image playerImage = new ImageIcon("images/person.jpg").getImage();
+        Animation playerImage=new Animation();
+        //Image playerImage = new ImageIcon("images/person.jpg").getImage();
         background = new ImageIcon("images/level3Background.jpg").getImage();
         Image eBefore = new ImageIcon("images/eBefore.jpg").getImage();
         Image eAfter = new ImageIcon("images/eAfter.jpg").getImage();
-        player = new Player(playerImage, playerImage.getWidth(null), playerImage.getHeight(null), 100, 350);
+        player = new Player(playerImage, 100, 100, 100, 350);
 
         b = new Block[12];
 
@@ -63,6 +66,7 @@ public class Level3State extends GameState {
 
     @Override
     public void tick() {
+        player.uodate();
         for (int i = 0; i < b.length; i++) {
             b[i].tick();
         }

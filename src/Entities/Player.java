@@ -4,12 +4,14 @@ import Objects.Block;
 import Objects.EObjects;
 import Objects.Ladder;
 
+import Physics.Animation;
 import Physics.Collision;
 import MainPack.Main;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 
 public class Player {
@@ -29,7 +31,12 @@ public class Player {
 
     private double moveSpeed = 1.7;
 
-    private Image player;
+    //ArrayList<String> player;
+    public int anim=0;
+    public String ad;
+
+    //private Image player;
+    private Animation player;
     private double jumpSpeed = 20;
     private double currentJumpSpeed = jumpSpeed;
 
@@ -38,7 +45,7 @@ public class Player {
 
     private double movingOnLadder = 2;
 
-    public Player(Image player, int width, int height, int x, int y) {
+    public Player(Animation player, int width, int height, int x, int y) {
         this.player = player;
         this.width = width;
         this.height = height;
@@ -101,7 +108,7 @@ public class Player {
                     Collision.playerBlock(new Point(iX + width, iY + height + iMaxFallSpeed), b[i])) {
 
                 if (!upLadder) {
-                    y = b[i].getY() - player.getHeight(null);
+                    y = b[i].getY()- 200;//player.getHeight(null);
                 }
                 falling = false;
                 topCollision = true;
@@ -114,7 +121,7 @@ public class Player {
         topCollision = false;
 
         if (right) {
-            if ((x + moveSpeed + player.getWidth(null)) < Main.frame.getWidth()) {
+            if ((x + moveSpeed + 450) < Main.frame.getWidth()) {
                 x = x + moveSpeed;
             }
         }
@@ -131,8 +138,9 @@ public class Player {
                 counterOfCtrl++;
             }
             moveSpeed = 1;
-            player = new ImageIcon("images/personHalfCut.jpg").getImage();
-            height = player.getHeight(null);
+            //player=new Animation();
+            //player = new ImageIcon("images/personHalfCut.jpg").getImage();
+            height = 200;
         }
         if (halfCut == false) {
             if (counterOfCtrl == 0) {
@@ -140,8 +148,9 @@ public class Player {
                 counterOfCtrl++;
             }
             moveSpeed = 1.7;
-            player = new ImageIcon("images/person.jpg").getImage();
-            height = player.getHeight(null);
+            //player=new Animation();
+            //player = new ImageIcon("images/person.jpg").getImage();
+            height = 200;
         }
 
         if (jumping) {
@@ -212,7 +221,13 @@ public class Player {
 
 
     public void draw(Graphics g) {
-        g.drawImage(player, (int) x, (int) y, null);
+        //g.drawImage(player, (int) x, (int) y, null);
+
+        player.animDraw(g, (int) x, (int) y);
+    }
+
+    public void uodate(){
+        player.update();
     }
 
     public void keyPressed(int key, Block[] b, Ladder[] l, EObjects[] e) {

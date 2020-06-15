@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1ccfa34-0a3a-4011-a4ce-3efb51dd98d5" name="Default Changelist" comment="">
+    <list default="true" id="9d609dc7-98d2-4d68-874a-d003951effe1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/GodLikeGame.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GameStates/Level2State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStates/Level1State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level1State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStates/Level3State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level3State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainPack/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPack/Display.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainPack/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainPack/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Physics/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Physics/Animation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Physics/per1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Physics/per2.PNG" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,58 +21,19 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Valeriia &lt;valeriia.bykovets@ukma.edu.ua&gt;" />
-      </list>
-    </option>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="ProjectId" id="1dAV1QE8x68Zn67oN37Sp2KpMBD" />
+  <component name="ProjectId" id="1dMBJlljs5Cw2SIjUOY5HhOC4eb" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Physics" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GodLikeGame\src\Physics" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Objects" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game4\images" />
-      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\GameFinal\images" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -78,7 +50,7 @@
   <component name="RunManager">
     <configuration name="Display" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainPack.Display" />
-      <module name="Game2" />
+      <module name="GodLikeGame" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="MainPack.*" />
@@ -100,100 +72,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f1ccfa34-0a3a-4011-a4ce-3efb51dd98d5" name="Default Changelist" comment="" />
-      <created>1591867668385</created>
+      <changelist id="9d609dc7-98d2-4d68-874a-d003951effe1" name="Default Changelist" comment="" />
+      <created>1592223612567</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1591867668385</updated>
-      <workItem from="1591872441106" duration="10565000" />
-      <workItem from="1592049365748" duration="2404000" />
-      <workItem from="1592150116202" duration="663000" />
+      <updated>1592223612567</updated>
+      <workItem from="1592223614033" duration="625000" />
+      <workItem from="1592225015347" duration="1467000" />
     </task>
-    <task id="LOCAL-00001" summary="lets try">
-      <created>1591870268039</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1591870268039</updated>
-    </task>
-    <task id="LOCAL-00002" summary="fixing some bugs in moving&#10;1) Player can't double jump&#10;2) Player can1t go through blocks">
-      <created>1591892809675</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1591892809675</updated>
-    </task>
-    <task id="LOCAL-00003" summary="fixing some bugs in moving&#10;1) Player can't double jump&#10;2) Player can1t go through blocks">
-      <created>1591893039398</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1591893039398</updated>
-    </task>
-    <task id="LOCAL-00004" summary="fixing some bugs in moving&#10;1) Player can't double jump&#10;2) Player can1t go through blocks">
-      <created>1591893149828</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1591893149828</updated>
-    </task>
-    <task id="LOCAL-00005" summary="fixing some bugs in moving&#10;1) Player can't double jump&#10;2) Player can1t go through blocks">
-      <created>1591893575798</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1591893575798</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fixing some bugs in moving&#10;1) Player can't double jump&#10;2) Player can1t go through blocks">
-      <created>1591893589635</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1591893589635</updated>
-    </task>
-    <task id="LOCAL-00007" summary="fixing some bugs in moving&#10;1) Player can't double jump&#10;2) Player can1t go through blocks">
-      <created>1591893645831</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1591893645831</updated>
-    </task>
-    <task id="LOCAL-00008" summary="fixing some bugs in moving&#10;1) Player can't double jump&#10;2) Player can1t go through blocks">
-      <created>1591894201005</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1591894201005</updated>
-    </task>
-    <task id="LOCAL-00009" summary="lets try">
-      <created>1591974454511</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1591974454511</updated>
-    </task>
-    <task id="LOCAL-00010" summary="lets try">
-      <created>1591984255237</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1591984255237</updated>
-    </task>
-    <task id="LOCAL-00011" summary="adding EObjects&#10;fixing bug in ctrl jump&#10;changing normal ove speed to 1.7 and ctrl speed to 1">
-      <created>1592050222549</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1592050222549</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Animation">
-      <created>1592150250858</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1592150250858</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,118 +90,28 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="withoutMap" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="withoutMap" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/master" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="master" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="HEAD" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="fixing some bugs in moving&#10;1) Player can't double jump&#10;2) Player can1t go through blocks" />
-    <MESSAGE value="lets try" />
-    <MESSAGE value="adding EObjects&#10;fixing bug in ctrl jump&#10;changing normal ove speed to 1.7 and ctrl speed to 1" />
-    <MESSAGE value="Animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Animation" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="424" y="0" key="CommitChangelistDialog2" timestamp="1592050221730">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1592224238811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="424" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592050221730" />
-    <state x="651" y="307" width="258" height="210" key="Github.ShareDialog" timestamp="1591869829062">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592224238811" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1592224238811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="651" y="307" width="258" height="210" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1591869829062" />
-    <state width="1493" height="116" key="GridCell.Tab.0.bottom" timestamp="1592051772337">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592224238811" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1592224238811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="116" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592051772337" />
-    <state width="1493" height="116" key="GridCell.Tab.0.center" timestamp="1592051772337">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592224238811" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1592224238811">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="116" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592051772337" />
-    <state width="1493" height="116" key="GridCell.Tab.0.left" timestamp="1592051772337">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="116" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592051772337" />
-    <state width="1493" height="116" key="GridCell.Tab.0.right" timestamp="1592051772337">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="116" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592051772337" />
-    <state width="1493" height="155" key="GridCell.Tab.1.bottom" timestamp="1591885546640">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="155" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591885546640" />
-    <state width="1493" height="155" key="GridCell.Tab.1.center" timestamp="1591885546640">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="155" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1591885546640" />
-    <state width="1493" height="155" key="GridCell.Tab.1.left" timestamp="1591885546639">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="155" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1591885546639" />
-    <state width="1493" height="155" key="GridCell.Tab.1.right" timestamp="1591885546640">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="155" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591885546640" />
-    <state x="277" y="55" key="SettingsEditor" timestamp="1591893120329">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591893120329" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1592050226961">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592050226961" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1592042125078">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1592042125078" />
-    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591981719418">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1591981719418" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592224238811" />
   </component>
 </project>

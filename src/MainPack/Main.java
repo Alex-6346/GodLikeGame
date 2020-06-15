@@ -1,6 +1,7 @@
 package MainPack;
 
 import GameStates.GameStateManager;
+import Physics.Animation;
 
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;

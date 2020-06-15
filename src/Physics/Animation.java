@@ -5,28 +5,41 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Animation {
-    ArrayList <String> move=new ArrayList<>();
-    public int anim=0;
+    ArrayList<String> typeAnimation = new ArrayList<>();
+    public int anim = 0;
     public String ad;
 
-    public Animation(){
-        move.add("images/per1.png");
-        move.add("images/per1.png");
-        move.add("images/per1.png");
-        move.add("images/per1.png");
-        move.add("images/per2.png");
-        move.add("images/per2.png");
-        move.add("images/per2.png");
-        move.add("images/per2.png");
+    public Animation(){}
+
+    public Animation(ArrayList<String> typeAnimation) {
+        this.typeAnimation = typeAnimation;
     }
 
-    public void update(){
+    public void update() {
         anim++;
-        if(anim>=move.size()) anim=0;
-        ad=move.get(anim);
+        if (anim >= typeAnimation.size()) anim = 0;
+        ad = typeAnimation.get(anim);
     }
+
+    public static ArrayList<String> move(){
+        ArrayList<String> move = new ArrayList<>();
+        move.add("images/person.jpg");
+        return move;
+    }
+
+    public static ArrayList<String> ctrlMove(){
+        ArrayList<String> move = new ArrayList<>();
+        move.add("images/personHalfCut.png");
+        return move;
+    }
+
+    public void setTypeAnimation(ArrayList<String>newTypeAnimation){
+        typeAnimation = newTypeAnimation;
+        anim = 0;
+    }
+
     //отрисовка
-    public void animDraw(Graphics g, int x, int y){
+    public void animDraw(Graphics g, int x, int y) {
         g.drawImage(new ImageIcon(ad).getImage(), x, y, null);
     }
 }

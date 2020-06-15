@@ -70,7 +70,6 @@ public class MenuState extends GameState {
     @Override
     public void mouseEntered(MouseEvent e) {
 
-
     }
 
     @Override

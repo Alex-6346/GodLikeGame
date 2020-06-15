@@ -25,11 +25,11 @@ public class Level1State extends GameState {
 
     @Override
     public void init() {
-        Animation playerImage=new Animation();
+        Animation playerImage=new Animation(Animation.move());
         //Image playerImage = new ImageIcon("images/person.jpg").getImage();
         Image eBefore = new ImageIcon("images/eBefore.jpg").getImage();
         Image eAfter = new ImageIcon("images/eAfter.jpg").getImage();
-        player = new Player(playerImage, 60, 130, 60, 130);
+        player = new Player(playerImage, 60, 130, 60, 150);
 
 
         b = new Block[7];

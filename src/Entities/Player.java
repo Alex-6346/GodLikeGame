@@ -24,6 +24,7 @@ public class Player {
     private boolean actionE = false;
     private int currentE;
 
+    public boolean isFallen = false;
 
     private double x, y;
     private int width, height;
@@ -32,7 +33,7 @@ public class Player {
     private double moveSpeed = 1.7;
 
     //ArrayList<String> player;
-    public int anim=0;
+    public int anim = 0;
     public String ad;
 
     //private Image player;
@@ -59,6 +60,10 @@ public class Player {
         int iY = (int) y;
         int iMaxFallSpeed = (int) maxFallSpeed;
 
+        if (y > Main.frame.getHeight()) {
+            isFallen = true;
+        }
+
         if (isLvl3) {
             if (iY <= 470 && iY >= 410) {
                 isLvl3Cellar = true;
@@ -70,21 +75,20 @@ public class Player {
 
         for (int i = 0; i < b.length; i++) {
             //collision while moving right
-            if (Collision.playerBlock(new Point(iX - 1 + width, iY), b[i]) ||
-                    Collision.playerBlock(new Point(iX - 1 + width, iY + height / 4), b[i]) ||
-                    Collision.playerBlock(new Point(iX - 1 + width, iY + height / 2), b[i]) ||
-                    Collision.playerBlock(new Point(iX - 1 + width, iY + 3 * height / 4), b[i]) ||
-                    Collision.playerBlock(new Point(iX - 1 + width, iY + height - 3), b[i])) {
+            if ((!halfCut && (Collision.playerBlock(new Point(iX + 2 + width, iY), b[i]) ||
+                    Collision.playerBlock(new Point(iX + 2 + width, iY + height / 4), b[i]))) ||
+                    Collision.playerBlock(new Point(iX + 2 + width, iY + height / 2), b[i]) ||
+                    Collision.playerBlock(new Point(iX + 2 + width, iY + 3 * height / 4), b[i]) ||
+                    Collision.playerBlock(new Point(iX + 2 + width, iY + height - 3), b[i])) {
                 right = false;
             }
 
             //collision while moving left
-            if (Collision.playerBlock(new Point(iX + 1, iY), b[i]) ||
-                    Collision.playerBlock(new Point(iX - 1, iY + height / 4), b[i]) ||
-                    Collision.playerBlock(new Point(iX - 1, iY + height / 2), b[i]) ||
-                    Collision.playerBlock(new Point(iX - 1, iY + 3 * height / 4), b[i]) ||
-                    Collision.playerBlock(new Point(iX - 1, iY + height - 3), b[i])) {
-
+            if ((!halfCut && (Collision.playerBlock(new Point(iX - 2, iY), b[i]) ||
+                    Collision.playerBlock(new Point(iX - 2, iY + height / 4), b[i]))) ||
+                    Collision.playerBlock(new Point(iX - 2, iY + height / 2), b[i]) ||
+                    Collision.playerBlock(new Point(iX - 2, iY + 3 * height / 4), b[i]) ||
+                    Collision.playerBlock(new Point(iX - 2, iY + height - 3), b[i])) {
                 left = false;
             }
 
@@ -108,7 +112,7 @@ public class Player {
                     Collision.playerBlock(new Point(iX + width, iY + height + iMaxFallSpeed), b[i])) {
 
                 if (!upLadder) {
-                    y = b[i].getY()- 200;//player.getHeight(null);
+                    y = b[i].getY() - height;//player.getHeight(null);
                 }
                 falling = false;
                 topCollision = true;
@@ -121,7 +125,7 @@ public class Player {
         topCollision = false;
 
         if (right) {
-            if ((x + moveSpeed + 450) < Main.frame.getWidth()) {
+            if ((x + moveSpeed) < Main.frame.getWidth()) {
                 x = x + moveSpeed;
             }
         }
@@ -134,23 +138,21 @@ public class Player {
 
         if (halfCut == true) {
             if (counterOfCtrl == 2) {
-                y = y + height / 2;
+                player.setTypeAnimation(Animation.ctrlMove());
+
+                //TODO animation
                 counterOfCtrl++;
             }
             moveSpeed = 1;
             //player=new Animation();
-            //player = new ImageIcon("images/personHalfCut.jpg").getImage();
-            height = 200;
-        }
-        if (halfCut == false) {
+        } else {
             if (counterOfCtrl == 0) {
-                y = y - height;
+                player.setTypeAnimation(Animation.move());
+                //TODO animation
                 counterOfCtrl++;
             }
             moveSpeed = 1.7;
             //player=new Animation();
-            //player = new ImageIcon("images/person.jpg").getImage();
-            height = 200;
         }
 
         if (jumping) {
@@ -226,7 +228,7 @@ public class Player {
         player.animDraw(g, (int) x, (int) y);
     }
 
-    public void uodate(){
+    public void uodate() {
         player.update();
     }
 

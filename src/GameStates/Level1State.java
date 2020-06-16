@@ -25,6 +25,7 @@ public class Level1State extends GameState {
 
     @Override
     public void init() {
+        Player.isLvl1 = true;
         playerImage = new Animation(Animation.move());
         Player.isLvl1 = true;
         Image eBefore = new ImageIcon("images/eBefore.jpg").getImage();
@@ -78,8 +79,9 @@ public class Level1State extends GameState {
 
 
 
-        l = new Ladder[1];
+        l = new Ladder[2];
         l[0]= new Ladder(2000,2000,0,0);
+        l[1]= new Ladder(10,500,200,200);
 
         e = new EObjects[1];
         e[0] = new EObjects(710, 480, eBefore, eAfter, true);

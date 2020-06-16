@@ -78,23 +78,23 @@ public class Player {
         for (int i = 0; i < b.length; i++) {
             //collision while moving right
             if ((!halfCut && (Collision.playerBlock(new Point(iX + 2 + width, iY), b[i]) ||
-                    //Collision.playerBlock(new Point(iX + 2 + width, iY + height / 4), b[i]) ||
+                    (!isLvl1 && Collision.playerBlock(new Point(iX + 2 + width, iY + height / 4), b[i])))) ||
                     Collision.playerBlock(new Point(iX + 2 + width, iY + height / 2), b[i]) ||
-                    //Collision.playerBlock(new Point(iX + 2 + width, iY + 3 * height / 4), b[i]) ||
-                    Collision.playerBlock(new Point(iX + 2 + width, iY + height - 3), b[i])))) {
+                    (!isLvl1 && Collision.playerBlock(new Point(iX + 2 + width, iY + 3 * height / 4), b[i])) ||
+                    Collision.playerBlock(new Point(iX + 2 + width, iY + height - 3), b[i])) {
                 right = false;
             }
 
             //collision while moving left
             if ((!halfCut && (Collision.playerBlock(new Point(iX - 2, iY), b[i]) ||
-                 //   Collision.playerBlock(new Point(iX - 2, iY + height / 4), b[i]) ||
+                    (!isLvl1 && Collision.playerBlock(new Point(iX - 2, iY + height / 4), b[i])))) ||
                     Collision.playerBlock(new Point(iX - 2, iY + height / 2), b[i]) ||
-                   // Collision.playerBlock(new Point(iX - 2, iY + 3 * height / 4), b[i]) ||
-                    Collision.playerBlock(new Point(iX - 2, iY + height - 3), b[i])))) {
+                    (!isLvl1 && Collision.playerBlock(new Point(iX - 2, iY + 3 * height / 4), b[i])) ||
+                    Collision.playerBlock(new Point(iX - 2, iY + height - 3), b[i])) {
                 left = false;
             }
 
-            if ( (!isLvl3 || isLvl3Cellar)&& !isLvl1 ) {
+            if ((!isLvl3 || isLvl3Cellar) && !isLvl1) {
                 //collision while jumping
 
                 if (Collision.playerBlock(new Point(iX, iY), b[i]) ||
@@ -107,15 +107,15 @@ public class Player {
             //collision while falling
 
             if (Collision.playerBlock(new Point(iX, iY + height + iMaxFallSpeed), b[i]) ||
-                    Collision.playerBlock(new Point(iX + width/10, iY + height + iMaxFallSpeed), b[i]) ||
-                    Collision.playerBlock(new Point(iX + 2*width/10, iY + height + iMaxFallSpeed), b[i]) ||
-                    Collision.playerBlock(new Point(iX + 3*width/10, iY + height + iMaxFallSpeed), b[i]) ||
-                    Collision.playerBlock(new Point(iX + 4*width/10, iY + height + iMaxFallSpeed), b[i]) ||
-                    Collision.playerBlock(new Point(iX + width/2, iY + height + iMaxFallSpeed), b[i]) ||
-                    Collision.playerBlock(new Point(iX + 6*width/10, iY + height + iMaxFallSpeed), b[i]) ||
-                    Collision.playerBlock(new Point(iX + 7*width/10, iY + height + iMaxFallSpeed), b[i]) ||
-                    Collision.playerBlock(new Point(iX + 8*width/10, iY + height + iMaxFallSpeed), b[i]) ||
-                    Collision.playerBlock(new Point(iX + 9*width/10, iY + height + iMaxFallSpeed), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width / 10, iY + height + iMaxFallSpeed), b[i]) ||
+                    Collision.playerBlock(new Point(iX + 2 * width / 10, iY + height + iMaxFallSpeed), b[i]) ||
+                    Collision.playerBlock(new Point(iX + 3 * width / 10, iY + height + iMaxFallSpeed), b[i]) ||
+                    Collision.playerBlock(new Point(iX + 4 * width / 10, iY + height + iMaxFallSpeed), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width / 2, iY + height + iMaxFallSpeed), b[i]) ||
+                    Collision.playerBlock(new Point(iX + 6 * width / 10, iY + height + iMaxFallSpeed), b[i]) ||
+                    Collision.playerBlock(new Point(iX + 7 * width / 10, iY + height + iMaxFallSpeed), b[i]) ||
+                    Collision.playerBlock(new Point(iX + 8 * width / 10, iY + height + iMaxFallSpeed), b[i]) ||
+                    Collision.playerBlock(new Point(iX + 9 * width / 10, iY + height + iMaxFallSpeed), b[i]) ||
                     Collision.playerBlock(new Point(iX + width, iY + height + iMaxFallSpeed), b[i])) {
 
                 if (!upLadder) {

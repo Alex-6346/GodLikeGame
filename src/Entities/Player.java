@@ -38,7 +38,7 @@ public class Player {
 
     //private Image player;
     private Animation player;
-    private double jumpSpeed = 20;
+    private double jumpSpeed = 22;
     private double currentJumpSpeed = jumpSpeed;
 
     private double maxFallSpeed = 5;
@@ -84,7 +84,7 @@ public class Player {
             }
 
             //collision while moving left
-            if ((!halfCut && (Collision.playerBlock(new Point(iX - 2, iY), b[i]) ||
+            if ((!halfCut && (Collision.playerBlock(new Point(iX - 2, iY ), b[i]) ||
                     Collision.playerBlock(new Point(iX - 2, iY + height / 4), b[i]))) ||
                     Collision.playerBlock(new Point(iX - 2, iY + height / 2), b[i]) ||
                     Collision.playerBlock(new Point(iX - 2, iY + 3 * height / 4), b[i]) ||

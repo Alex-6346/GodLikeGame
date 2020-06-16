@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d609dc7-98d2-4d68-874a-d003951effe1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/empty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/lvl3Fruit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/lvl3Hole.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/lvl3Potion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/personHalfCut.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/personHalfCut.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/level1Background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/level1Background.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameStates/Level1State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level1State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStates/Level3State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level3State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStates/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/MenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Physics/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Physics/Animation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +14,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1dMBJlljs5Cw2SIjUOY5HhOC4eb" />
   <component name="ProjectViewState">
@@ -66,6 +59,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -99,25 +104,33 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="168" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1592298927345">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="168" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1592298927345" />
     <state x="387" y="0" key="CommitChangelistDialog2" timestamp="1592249612480">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="387" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592249612480" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1592249615354">
+    <state width="1493" height="131" key="GridCell.Tab.0.bottom" timestamp="1592301563466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592249615354" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1592249615354">
+    <state width="1493" height="131" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592301563466" />
+    <state width="1493" height="131" key="GridCell.Tab.0.center" timestamp="1592301563466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592249615354" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1592249615354">
+    <state width="1493" height="131" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592301563466" />
+    <state width="1493" height="131" key="GridCell.Tab.0.left" timestamp="1592301563465">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592249615354" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1592249615354">
+    <state width="1493" height="131" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592301563465" />
+    <state width="1493" height="131" key="GridCell.Tab.0.right" timestamp="1592301563466">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592249615354" />
+    <state width="1493" height="131" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592301563466" />
+    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592299077248">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1592299077248" />
   </component>
 </project>

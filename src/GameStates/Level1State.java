@@ -9,7 +9,6 @@ import Physics.Animation;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 public class Level1State extends GameState {
 
@@ -17,7 +16,8 @@ public class Level1State extends GameState {
     private Block[] b;
     private Ladder[] l;
     private EObjects[] e;
-
+    Animation playerImage;
+    private Image background;
 
     public Level1State(GameStateManager gsm) {
         super(gsm);
@@ -25,34 +25,32 @@ public class Level1State extends GameState {
 
     @Override
     public void init() {
-        Animation playerImage=new Animation(Animation.move());
-        //Image playerImage = new ImageIcon("images/person.jpg").getImage();
+        playerImage = new Animation(Animation.move());
         Image eBefore = new ImageIcon("images/eBefore.jpg").getImage();
         Image eAfter = new ImageIcon("images/eAfter.jpg").getImage();
-        player = new Player(playerImage, 60, 130, 60, 150);
+        background = new ImageIcon("images/level1Background.jpg").getImage();
+        player = new Player(playerImage, 60,130, 100, 500);
+
+        b = new Block[6];
+
+        //walls
+        b[0] = new Block(0, 0, 5, 850);
+        b[1] = new Block(1395, 0, 5, 850);
+
+        //beginning platform
+        b[2] = new Block(0,725,425,10);
+
+        //left clock
+        b[3] = new Block(280, 250, 15, 370);
+        b[4] = new Block(230, 460, 280, 10);
 
 
-        b = new Block[7];
-
-        // b[0] = new Block(450,550, 500, 90);
-        // b[1] = new Block(932,410,200,10);
-        // b[2] = new Block(450,380, 200, 100);
-        b[0] = new Block(0, 0, 20, 850);
-        b[1] = new Block(1380, 0, 20, 850);
-        b[2] = new Block(0, 280, 402, 10);
-        b[3] = new Block(498, 280, 902, 10);
-
-        b[4] = new Block(0, 550, 1000, 10);
-        b[5] = new Block(1096, 550, 304, 10);
+        b[5] = new Block(460,590,290,10);
 
 
-        b[6] = new Block(0, 820, 1400, 10);
 
-
-        l = new Ladder[3];
-        l[0] = new Ladder(405, 260, 90, 300);
-        l[1] = new Ladder(1003, 530, 90, 300);
-        l[2] = new Ladder(703, 600, 90, 200);
+        l = new Ladder[1];
+        l[0]= new Ladder(2000,2000,0,0);
 
         e = new EObjects[1];
         e[0] = new EObjects(710, 480, eBefore, eAfter, true);
@@ -60,7 +58,7 @@ public class Level1State extends GameState {
 
     @Override
     public void tick() {
-
+        player.uodate();
         for (int i = 0; i < b.length; i++) {
             b[i].tick();
         }
@@ -74,12 +72,12 @@ public class Level1State extends GameState {
         player.tickLadder(l);
         player.tickEObjects(e);
         player.tickBlock(b);
-        player.uodate();
 
     }
 
     @Override
     public void draw(Graphics g) {
+        g.drawImage(background, 0, 0, null);
 
         for (int i = 0; i < l.length; i++) {
             l[i].draw(g);
@@ -88,12 +86,12 @@ public class Level1State extends GameState {
         for (int i = 0; i < e.length; i++) {
             e[i].draw(g);
         }
+
         player.draw(g);
 
         for (int i = 0; i < b.length; i++) {
             b[i].draw(g);
         }
-
     }
 
     @Override

@@ -41,7 +41,7 @@ public class Level1State extends GameState {
         b[2] = new Block(0,725,425,10);
 
         //left clock
-        b[3] = new Block(280, 250, 15, 370);
+        b[3] = new Block(280, 250, 15, 390);
         b[4] = new Block(230, 460, 280, 10);
 
 

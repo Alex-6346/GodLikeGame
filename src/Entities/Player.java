@@ -84,7 +84,7 @@ public class Player {
             }
 
             //collision while moving left
-            if ((!halfCut && (Collision.playerBlock(new Point(iX - 2, iY ), b[i]) ||
+            if ((!halfCut && (Collision.playerBlock(new Point(iX - 2, iY), b[i]) ||
                     Collision.playerBlock(new Point(iX - 2, iY + height / 4), b[i]))) ||
                     Collision.playerBlock(new Point(iX - 2, iY + height / 2), b[i]) ||
                     Collision.playerBlock(new Point(iX - 2, iY + 3 * height / 4), b[i]) ||
@@ -98,9 +98,6 @@ public class Player {
                 if (Collision.playerBlock(new Point(iX, iY), b[i]) ||
                         Collision.playerBlock(new Point(iX + width, iY), b[i])) {
                     jumping = false;
-                    //if (!beingOnLadder) {
-                    falling = true;
-                    // }
                 }
             }
 
@@ -250,9 +247,9 @@ public class Player {
                 int iY = (int) y;
                 boolean trueCtrl = true;
                 for (int i = 0; i < b.length; i++) {
-                    if (Collision.playerBlock(new Point(iX + 1, iY - height), b[i]) ||
-                            Collision.playerBlock(new Point(iX + width / 2, iY - height), b[i]) ||
-                            Collision.playerBlock(new Point(iX + width, iY - height), b[i])) {
+                    if (Collision.playerBlock(new Point(iX + 1, iY), b[i]) ||
+                            Collision.playerBlock(new Point(iX + width / 2, iY), b[i]) ||
+                            Collision.playerBlock(new Point(iX + width, iY), b[i])) {
                         trueCtrl = false;
                     }
                 }

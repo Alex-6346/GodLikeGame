@@ -16,6 +16,7 @@ public class Block extends Rectangle {
     public void draw(Graphics g){
         g.setColor(Color.blue.WHITE);
         g.fillRect(x,y,width,height);
+        g.setColor(Color.RED);
     }
 
 }

@@ -2,7 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1ccfa34-0a3a-4011-a4ce-3efb51dd98d5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/jump/jump1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump26.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump27.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump29.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump30.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump31.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/jump/jump9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStates/Level1State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level1State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStates/Level3State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level3State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStates/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/MenuState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Physics/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Physics/Animation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +77,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game6\images" />
+      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game7\images" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="GameStates" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game7\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -143,22 +182,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="387" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592395852090" />
-    <state width="746" height="210" key="GridCell.Tab.0.bottom" timestamp="1592395861280">
+    <state width="1493" height="116" key="GridCell.Tab.0.bottom" timestamp="1592423652536">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592395861280" />
-    <state width="746" height="210" key="GridCell.Tab.0.center" timestamp="1592395861279">
+    <state width="1493" height="116" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592423652536" />
+    <state width="1493" height="116" key="GridCell.Tab.0.center" timestamp="1592423652536">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592395861279" />
-    <state width="746" height="210" key="GridCell.Tab.0.left" timestamp="1592395861279">
+    <state width="1493" height="116" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592423652536" />
+    <state width="1493" height="116" key="GridCell.Tab.0.left" timestamp="1592423652536">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592395861279" />
-    <state width="746" height="210" key="GridCell.Tab.0.right" timestamp="1592395861279">
+    <state width="1493" height="116" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592423652536" />
+    <state width="1493" height="116" key="GridCell.Tab.0.right" timestamp="1592423652536">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="746" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592395861279" />
+    <state width="1493" height="116" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592423652536" />
+    <state width="1493" height="155" key="GridCell.Tab.1.bottom" timestamp="1592423597748">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="155" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592423597748" />
+    <state width="1493" height="155" key="GridCell.Tab.1.center" timestamp="1592423597748">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="155" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592423597748" />
+    <state width="1493" height="155" key="GridCell.Tab.1.left" timestamp="1592423597748">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="155" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592423597748" />
+    <state width="1493" height="155" key="GridCell.Tab.1.right" timestamp="1592423597748">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="155" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592423597748" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1592395836905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -88,7 +88,7 @@ public class Level1State extends GameState {
 
     @Override
     public void tick() {
-        player.uodate();
+        player.update();
         for (int i = 0; i < b.length; i++) {
             b[i].tick();
         }

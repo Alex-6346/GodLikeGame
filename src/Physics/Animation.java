@@ -2,14 +2,13 @@ package Physics;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Area;
 import java.util.ArrayList;
 
 public class Animation {
-    ArrayList<String> typeAnimation = new ArrayList<>();
+    ArrayList<String> typeAnimation;
     public int anim = 0;
     public String ad;
-
-    public Animation(){}
 
     public Animation(ArrayList<String> typeAnimation) {
         this.typeAnimation = typeAnimation;
@@ -21,21 +20,65 @@ public class Animation {
         ad = typeAnimation.get(anim);
     }
 
-    public static ArrayList<String> move(){
+    public static ArrayList<String> move() {
         ArrayList<String> move = new ArrayList<>();
-        move.add("images/person.jpg");
+        move.add("images/jump/jump1.png");
         return move;
     }
 
-    public static ArrayList<String> ctrlMove(){
-        ArrayList<String> move = new ArrayList<>();
-        move.add("images/personHalfCut.png");
-        return move;
+    public static ArrayList<String> jump() {
+        ArrayList<String> jump = new ArrayList<>();
+        makeAnimationLonger(2, jump, "images/jump/jump1.png");
+        makeAnimationLonger(2, jump, "images/jump/jump2.png");
+        makeAnimationLonger(2, jump, "images/jump/jump3.png");
+        makeAnimationLonger(2, jump, "images/jump/jump4.png");
+        makeAnimationLonger(2, jump, "images/jump/jump5.png");
+        makeAnimationLonger(2, jump, "images/jump/jump6.png");
+        makeAnimationLonger(2, jump, "images/jump/jump7.png");
+        makeAnimationLonger(2, jump, "images/jump/jump8.png");
+        makeAnimationLonger(2, jump, "images/jump/jump9.png");
+        makeAnimationLonger(2, jump, "images/jump/jump10.png");
+        makeAnimationLonger(2, jump, "images/jump/jump11.png");
+        makeAnimationLonger(2, jump, "images/jump/jump12.png");
+        makeAnimationLonger(2, jump, "images/jump/jump13.png");
+        makeAnimationLonger(2, jump, "images/jump/jump14.png");
+        makeAnimationLonger(2, jump, "images/jump/jump15.png");
+        makeAnimationLonger(2, jump, "images/jump/jump16.png");
+        makeAnimationLonger(2, jump, "images/jump/jump17.png");
+        makeAnimationLonger(2, jump, "images/jump/jump18.png");
+        makeAnimationLonger(2, jump, "images/jump/jump19.png");
+        makeAnimationLonger(2, jump, "images/jump/jump20.png");
+        makeAnimationLonger(2, jump, "images/jump/jump21.png");
+        makeAnimationLonger(2, jump, "images/jump/jump22.png");
+        makeAnimationLonger(2, jump, "images/jump/jump23.png");
+        makeAnimationLonger(2, jump, "images/jump/jump24.png");
+        makeAnimationLonger(2, jump, "images/jump/jump25.png");
+        makeAnimationLonger(2, jump, "images/jump/jump26.png");
+        makeAnimationLonger(2, jump, "images/jump/jump27.png");
+        makeAnimationLonger(2, jump, "images/jump/jump28.png");
+        makeAnimationLonger(2, jump, "images/jump/jump29.png");
+        makeAnimationLonger(2, jump, "images/jump/jump30.png");
+        makeAnimationLonger(2, jump, "images/jump/jump31.png");
+        makeAnimationLonger(2, jump, "images/jump/jump32.png");
+        makeAnimationLonger(2, jump, "images/jump/jump33.png");
+        return jump;
     }
 
-    public void setTypeAnimation(ArrayList<String>newTypeAnimation){
+    public static ArrayList<String> ctrlMove() {
+        ArrayList<String> ctrlMove = new ArrayList<>();
+        ctrlMove.add("images/personHalfCut.png");
+        return ctrlMove;
+    }
+
+    public void setTypeAnimation(ArrayList<String> newTypeAnimation) {
         typeAnimation = newTypeAnimation;
         anim = 0;
+    }
+
+    private static void makeAnimationLonger(int numberOfRepeats, ArrayList<String> animation, String picture) {
+        for (int i = 0; i < numberOfRepeats; i++) {
+            animation.add(picture);
+        }
     }
 
     //отрисовка

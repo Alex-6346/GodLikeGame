@@ -57,9 +57,11 @@ public class Player {
 
     public void tickBlock(Block[] b) {
 
+
         int iX = (int) x;
         int iY = (int) y;
         int iMaxFallSpeed = (int) maxFallSpeed;
+
 
         if (y > Main.frame.getHeight()) {
             isFallen = true;
@@ -76,6 +78,13 @@ public class Player {
         }
 
         for (int i = 0; i < b.length; i++) {
+
+            if (!jumping && !right && !left && (Collision.playerBlock(new Point(iX + 1, iY + height), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width / 2, iY + height), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width, iY + height), b[i]))) {
+                player.setTypeAnimation(Animation.move());
+            }
+
             //collision while moving right
             if ((!halfCut && (Collision.playerBlock(new Point(iX + 2 + width, iY), b[i]) ||
                     (!isLvl1 && Collision.playerBlock(new Point(iX + 2 + width, iY + height / 4), b[i])))) ||
@@ -117,7 +126,6 @@ public class Player {
                     Collision.playerBlock(new Point(iX + 8 * width / 10, iY + height + iMaxFallSpeed), b[i]) ||
                     Collision.playerBlock(new Point(iX + 9 * width / 10, iY + height + iMaxFallSpeed), b[i]) ||
                     Collision.playerBlock(new Point(iX + width, iY + height + iMaxFallSpeed), b[i])) {
-
                 if (!upLadder) {
                     y = b[i].getY() - height;//player.getHeight(null);
                 }
@@ -154,7 +162,9 @@ public class Player {
             //player=new Animation();
         } else {
             if (counterOfCtrl == 0) {
-                player.setTypeAnimation(Animation.move());
+                if (!jumping) {
+                    player.setTypeAnimation(Animation.move());
+                }
                 //TODO animation
                 counterOfCtrl++;
             }
@@ -235,7 +245,7 @@ public class Player {
         player.animDraw(g, (int) x, (int) y);
     }
 
-    public void uodate() {
+    public void update() {
         player.update();
     }
 
@@ -313,6 +323,7 @@ public class Player {
                                 Collision.playerBlock(new Point(iX + width / 2, iY + height + 7), b[i]) ||
                                 Collision.playerBlock(new Point(iX + width, iY + height + 7), b[i])) && !halfCut) {
                             jumping = true;
+                            player.setTypeAnimation(Animation.jump());
                         }
                     }
 

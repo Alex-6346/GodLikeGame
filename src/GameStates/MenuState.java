@@ -55,6 +55,15 @@ public class MenuState extends GameState {
             if(currentSelection == 0){
                 gameStateManager.states.push(new Level1State(gameStateManager));
             }
+
+            if(currentSelection == 1) {
+                gameStateManager.states.push(new HelpState(gameStateManager));
+            }
+
+            if(currentSelection == 2){
+
+            }
+
         }
     }
 

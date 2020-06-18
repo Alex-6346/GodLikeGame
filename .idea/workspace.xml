@@ -2,44 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1ccfa34-0a3a-4011-a4ce-3efb51dd98d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump10L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump11L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump12L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump13L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump14L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump15L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump16L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump17L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump18L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump19L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump1L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump20L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump21L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump22L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump23L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump24L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump25L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump26L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump27L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump28L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump29L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump2L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump30L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump31L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump32L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump33L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump3L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump4L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump5L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump6L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump7L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump8L.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/jumpL/jump9L.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStates/Level1State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level1State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStates/Level3State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level3State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Physics/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Physics/Animation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStates/HelpState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/HelpState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStates/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/MenuState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,22 +155,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="387" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592424273260" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1592468184265">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1592469959203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592468184265" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1592468184264">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592469959203" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1592469959203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592468184264" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1592468184264">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592469959203" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1592469959203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592468184264" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1592468184264">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592469959203" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1592469959203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592468184264" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592469959203" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1592468065804">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

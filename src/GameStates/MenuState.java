@@ -61,7 +61,7 @@ public class MenuState extends GameState {
             }
 
             if(currentSelection == 2){
-
+                System.exit(0);
             }
 
         }

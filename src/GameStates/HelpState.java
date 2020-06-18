@@ -14,6 +14,7 @@ public class HelpState extends GameState {
     private Image arrowUpDown;
     private Image ctrlButton;
     private Image escButton;
+    private  Image eButton;
 
     public HelpState(GameStateManager gsm) {
         super(gsm);
@@ -25,7 +26,7 @@ public class HelpState extends GameState {
         arrowUpDown = new ImageIcon("images/upAndDownArrowKeys.png").getImage();
         ctrlButton = new ImageIcon("images/CtrlButton.png").getImage();
         escButton = new ImageIcon("images/escButton.png").getImage();
-
+        eButton = new ImageIcon("images/e-Button.png").getImage();
     }
 
     @Override
@@ -50,10 +51,12 @@ public class HelpState extends GameState {
         g.drawImage(arrowUpDown,1000,375,80,160,null);
         g.drawString("Pause - ", Main.frame.getWidth()/2-225,560);
         g.drawImage(escButton,775,490,90,90,null);
+        g.drawString("Interact with objects - ", Main.frame.getWidth()/2-450,640);
+        g.drawImage(eButton,1030,570,80,80,null);
 
         g.setColor(Color.GREEN);
         g.setFont(new Font("Arial", Font.PLAIN, 120));
-        g.drawString("OK!", Main.frame.getWidth()/2-100,700);
+        g.drawString("OK!", Main.frame.getWidth()/2-125,780);
 
         }
 

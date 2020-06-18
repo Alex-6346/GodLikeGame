@@ -26,7 +26,7 @@ public class Level1State extends GameState {
     @Override
     public void init() {
         Player.isLvl1 = true;
-        playerImage = new Animation(Animation.move());
+        playerImage = new Animation(Animation.stayR());
         Player.isLvl1 = true;
         Image eBefore = new ImageIcon("images/eBefore.jpg").getImage();
         Image eAfter = new ImageIcon("images/eAfter.jpg").getImage();

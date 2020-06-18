@@ -8,16 +8,15 @@ import Physics.Animation;
 import Physics.Collision;
 import MainPack.Main;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 
 
 public class Player {
 
     private boolean right = false, left = false, jumping = false, falling = false, upLadder = false, downLadder = false, halfCut = false, ctrlReleased = false;
     private boolean beingOnLadder = false;
+    private boolean turnRight = true;
     private boolean topCollision = false;
     public static boolean isLvl3 = false;
     public static boolean isLvl1 = false;
@@ -79,10 +78,13 @@ public class Player {
 
         for (int i = 0; i < b.length; i++) {
 
-            if (!jumping && !right && !left && (Collision.playerBlock(new Point(iX + 1, iY + height), b[i]) ||
+            if (!jumping && (Collision.playerBlock(new Point(iX + 1, iY + height), b[i]) ||
                     Collision.playerBlock(new Point(iX + width / 2, iY + height), b[i]) ||
                     Collision.playerBlock(new Point(iX + width, iY + height), b[i]))) {
-                player.setTypeAnimation(Animation.move());
+                if(turnRight){
+                    player.setTypeAnimation(Animation.stayR());
+                }else player.setTypeAnimation(Animation.stayL());
+
             }
 
             //collision while moving right
@@ -163,7 +165,7 @@ public class Player {
         } else {
             if (counterOfCtrl == 0) {
                 if (!jumping) {
-                    player.setTypeAnimation(Animation.move());
+                    player.setTypeAnimation(Animation.stayR());
                 }
                 //TODO animation
                 counterOfCtrl++;
@@ -253,10 +255,12 @@ public class Player {
         if (key == KeyEvent.VK_RIGHT) {
             right = true;
             upLadder = false;
+            turnRight = true;
         }
         if (key == KeyEvent.VK_LEFT) {
             left = true;
             upLadder = false;
+            turnRight = false;
         }
         if (key == KeyEvent.VK_CONTROL) {
             if (counterOfCtrl == 1) {
@@ -323,7 +327,12 @@ public class Player {
                                 Collision.playerBlock(new Point(iX + width / 2, iY + height + 7), b[i]) ||
                                 Collision.playerBlock(new Point(iX + width, iY + height + 7), b[i])) && !halfCut) {
                             jumping = true;
-                            player.setTypeAnimation(Animation.jump());
+                            if(turnRight){
+                                player.setTypeAnimation(Animation.jumpR());
+                            }else {
+                                player.setTypeAnimation(Animation.jumpL());
+                            }
+
                         }
                     }
 

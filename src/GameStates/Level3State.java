@@ -40,7 +40,7 @@ public class Level3State extends GameState {
         seconds = 90;
         time = "90";
         Player.isLvl3 = true;
-        playerImage = new Animation(Animation.jump());
+        playerImage = new Animation(Animation.jumpR());
         background = new ImageIcon("images/level3Background.jpg").getImage();
         hole = new ImageIcon("images/lvl3Hole.png").getImage();
         eBefore = new ImageIcon("images/eBefore.jpg").getImage();

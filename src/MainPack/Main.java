@@ -17,7 +17,6 @@ import javax.swing.JPanel;
 public class Main extends JPanel implements Runnable, KeyListener, MouseListener {
 
     public  static JFrame frame;
-
     private Thread thread;
     private boolean isRunning = false;
     private int fps = 60;

@@ -1,6 +1,7 @@
 package GameStates;
 
 import Entities.Player;
+import MainPack.Main;
 import Objects.Block;
 import Objects.EObjects;
 import Objects.Ladder;
@@ -8,6 +9,7 @@ import Physics.Animation;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Ellipse2D;
 import java.util.Timer;
@@ -48,7 +50,7 @@ public class Level3State extends GameState {
         empty = new ImageIcon("images/empty.png").getImage();
         fruit = new ImageIcon("images/lvl3Fruit.png").getImage();
         potion = new ImageIcon("images/lvl3Potion.png").getImage();
-        player = new Player(playerImage, 60, 130, 100, 350);
+        player = new Player(playerImage, 60, 130, 100, 350, gameStateManager);
 
         b = new Block[12];
 
@@ -154,6 +156,7 @@ public class Level3State extends GameState {
     @Override
     public void keyPressed(int key) {
         player.keyPressed(key, b, l, e);
+
     }
 
     @Override

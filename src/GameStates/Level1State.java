@@ -32,7 +32,7 @@ public class Level1State extends GameState {
         Image eBefore = new ImageIcon("images/eBefore.jpg").getImage();
         Image eAfter = new ImageIcon("images/eAfter.jpg").getImage();
         background = new ImageIcon("images/level1Background.jpg").getImage();
-        player = new Player(playerImage, 60,130, 100, 500);
+        player = new Player(playerImage, 60,130, 100, 500, gameStateManager);
 
         b = new Block[18];
 

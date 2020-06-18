@@ -1,5 +1,7 @@
 package Entities;
 
+import GameStates.GameStateManager;
+import GameStates.PauseState;
 import Objects.Block;
 import Objects.EObjects;
 import Objects.Ladder;
@@ -8,7 +10,6 @@ import Physics.Animation;
 import Physics.Collision;
 import MainPack.Main;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -46,8 +47,10 @@ public class Player {
     private double currentFallSpeed = 0.1;
 
     private double movingOnLadder = 2;
+    private GameStateManager gameStateManager;
 
-    public Player(Animation player, int width, int height, int x, int y) {
+    public Player(Animation player, int width, int height, int x, int y, GameStateManager gameStateManager) {
+        this.gameStateManager = gameStateManager;
         this.player = player;
         this.width = width;
         this.height = height;
@@ -353,6 +356,10 @@ public class Player {
             }
         }
 
+        if(key == KeyEvent.VK_ESCAPE){
+            PauseState pauseState = new PauseState(gameStateManager);
+        }
+
         if (key == KeyEvent.VK_DOWN) {
             for (int i = 0; i < l.length; i++) {
                 int iX = (int) x;
@@ -370,20 +377,6 @@ public class Player {
                 }
             }
         }
-
-        if(key == KeyEvent.VK_ESCAPE){
-            JFrame pauseFrame = new JFrame("Back to menu:");
-            pauseFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            pauseFrame.setPreferredSize(new Dimension( 600, 400));
-            pauseFrame.setResizable(false);
-            pauseFrame.setFocusable(true);
-            pauseFrame.setVisible(true);
-            pauseFrame.pack();
-            pauseFrame.setLocationRelativeTo(Main.frame);
-
-
-        }
-
     }
 
     public void keyReleased(int key) {

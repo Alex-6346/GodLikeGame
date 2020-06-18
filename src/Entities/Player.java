@@ -8,6 +8,7 @@ import Physics.Animation;
 import Physics.Collision;
 import MainPack.Main;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -369,6 +370,20 @@ public class Player {
                 }
             }
         }
+
+        if(key == KeyEvent.VK_ESCAPE){
+            JFrame pauseFrame = new JFrame("Back to menu:");
+            pauseFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            pauseFrame.setPreferredSize(new Dimension( 600, 400));
+            pauseFrame.setResizable(false);
+            pauseFrame.setFocusable(true);
+            pauseFrame.setVisible(true);
+            pauseFrame.pack();
+            pauseFrame.setLocationRelativeTo(Main.frame);
+
+
+        }
+
     }
 
     public void keyReleased(int key) {

@@ -8,6 +8,7 @@ import Physics.Animation;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 
 public class Level1State extends GameState {
@@ -127,6 +128,7 @@ public class Level1State extends GameState {
     @Override
     public void keyPressed(int key) {
         player.keyPressed(key, b, l, e);
+
     }
 
     @Override

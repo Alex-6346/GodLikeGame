@@ -12,11 +12,14 @@ import MainPack.Main;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class Player {
 
     private boolean right = false, left = false, jumping = false, falling = false, upLadder = false, downLadder = false, halfCut = false, ctrlReleased = false;
+    private boolean staying = true;
     private boolean beingOnLadder = false;
     private boolean turnRight = true;
     private boolean topCollision = false;
@@ -48,6 +51,9 @@ public class Player {
 
     private double movingOnLadder = 2;
     private GameStateManager gameStateManager;
+    private Timer timerCtrlDown;
+    private Timer timerCtrlUp;
+    private Timer timerJump;
 
     public Player(Animation player, int width, int height, int x, int y, GameStateManager gameStateManager) {
         this.gameStateManager = gameStateManager;
@@ -82,14 +88,12 @@ public class Player {
 
         for (int i = 0; i < b.length; i++) {
 
-            if (!jumping && (Collision.playerBlock(new Point(iX + 1, iY + height), b[i]) ||
-                    Collision.playerBlock(new Point(iX + width / 2, iY + height), b[i]) ||
-                    Collision.playerBlock(new Point(iX + width, iY + height), b[i]))) {
-                if(turnRight){
-                    player.setTypeAnimation(Animation.stayR());
-                }else player.setTypeAnimation(Animation.stayL());
-
-            }
+//            if (staying) {
+//                if(turnRight){
+//                    player.setTypeAnimation(Animation.stayR());
+//                }else player.setTypeAnimation(Animation.stayL());
+//
+//            }
 
             //collision while moving right
             if ((!halfCut && (Collision.playerBlock(new Point(iX + 2 + width, iY), b[i]) ||
@@ -111,7 +115,6 @@ public class Player {
 
             if ((!isLvl3 || isLvl3Cellar) && !isLvl1) {
                 //collision while jumping
-
                 if (Collision.playerBlock(new Point(iX, iY), b[i]) ||
                         Collision.playerBlock(new Point(iX + width, iY), b[i])) {
                     jumping = false;
@@ -159,23 +162,53 @@ public class Player {
 
         if (halfCut == true) {
             if (counterOfCtrl == 2) {
-                player.setTypeAnimation(Animation.ctrlMove());
-
-                //TODO animation
+                if(turnRight){
+                    player.setTypeAnimation(Animation.ctrlR());
+                }else{
+                    player.setTypeAnimation(Animation.ctrlL());
+                }
+                TimerTask task = new TimerTask() {
+                    @Override
+                    public void run() {
+                        if(turnRight){
+                            player.setTypeAnimation(Animation.ctrlMoveR());
+                        }else{
+                            player.setTypeAnimation(Animation.ctrlMoveL());
+                        }
+                    }
+                };
+                long delay = 200;
+                timerCtrlDown = new Timer();
+                timerCtrlDown.schedule(task, delay);
+                moveSpeed = 1;
                 counterOfCtrl++;
             }
-            moveSpeed = 1;
-            //player=new Animation();
+
         } else {
             if (counterOfCtrl == 0) {
                 if (!jumping) {
-                    player.setTypeAnimation(Animation.stayR());
+                    if(turnRight){
+                        player.setTypeAnimation(Animation.notCtrlR());
+                    }else{
+                        player.setTypeAnimation(Animation.notCtrlL());
+                    }
+                    TimerTask task2 = new TimerTask() {
+                        @Override
+                        public void run() {
+                            if(turnRight){
+                                player.setTypeAnimation(Animation.stayR());
+                            }else{
+                                player.setTypeAnimation(Animation.stayL());
+                            }
+                        }
+                    };
+                    long delay = 200;
+                    timerCtrlUp = new Timer();
+                    timerCtrlUp.schedule(task2, delay);
                 }
-                //TODO animation
                 counterOfCtrl++;
             }
             moveSpeed = 1.7;
-            //player=new Animation();
         }
 
         if (jumping) {
@@ -259,16 +292,37 @@ public class Player {
         if (key == KeyEvent.VK_RIGHT) {
             right = true;
             upLadder = false;
+            if(!turnRight){
+                if(halfCut){
+                    player.setTypeAnimation(Animation.ctrlMoveR());
+                }
+                else if(jumping){
+                    player.setTypeAnimation(Animation.jumpR());
+                }else {
+                    player.setTypeAnimation(Animation.stayR());
+                }
+            }
             turnRight = true;
         }
         if (key == KeyEvent.VK_LEFT) {
             left = true;
             upLadder = false;
+            if(turnRight){
+                if(halfCut){
+                    player.setTypeAnimation(Animation.ctrlMoveL());
+                }
+                else if(jumping){
+                    player.setTypeAnimation(Animation.jumpL());
+                }else {
+                    player.setTypeAnimation(Animation.stayL());
+                }
+            }
             turnRight = false;
         }
         if (key == KeyEvent.VK_CONTROL) {
             if (counterOfCtrl == 1) {
                 halfCut = true;
+                staying = false;
                 counterOfCtrl++;
             } else {
                 int iX = (int) x;
@@ -316,9 +370,11 @@ public class Player {
                                     Collision.playerLadder(new Point(iX + width, iY + height - 2), l[i]))) {
                         upLadder = true;
                         beingOnLadder = true;
+                        staying = false;
                     } else {
                         if (!beingOnLadder) {
                             upLadder = false;
+                            staying = true;
                         }
                     }
                 }
@@ -331,6 +387,19 @@ public class Player {
                                 Collision.playerBlock(new Point(iX + width / 2, iY + height + 7), b[i]) ||
                                 Collision.playerBlock(new Point(iX + width, iY + height + 7), b[i])) && !halfCut) {
                             jumping = true;
+                            TimerTask task = new TimerTask() {
+                                @Override
+                                public void run() {
+                                    if(turnRight){
+                                        player.setTypeAnimation(Animation.stayR());
+                                    }else{
+                                        player.setTypeAnimation(Animation.stayL());
+                                    }
+                                }
+                            };
+                            long delay = 850;
+                            timerJump = new Timer();
+                            timerJump.schedule(task, delay);
                             if(turnRight){
                                 player.setTypeAnimation(Animation.jumpR());
                             }else {
@@ -350,6 +419,7 @@ public class Player {
                                 (Collision.playerLadder(new Point(iX, iY + height), l[i]) &&
                                         Collision.playerLadder(new Point(iX + width, iY + height), l[i]))) {
                             jumping = false;
+                            staying = true;
                         }
                     }
                 }
@@ -370,6 +440,7 @@ public class Player {
                         Collision.playerLadder(new Point(iX + width, iY + height), l[i]) && !halfCut) {
                     downLadder = true;
                     beingOnLadder = true;
+                    staying = false;
                 } else {
                     if (!beingOnLadder) {
                         falling = true;
@@ -380,9 +451,21 @@ public class Player {
     }
 
     public void keyReleased(int key) {
-        if (key == KeyEvent.VK_RIGHT) right = false;
-        if (key == KeyEvent.VK_LEFT) left = false;
-        if (key == KeyEvent.VK_UP) upLadder = false;
-        if (key == KeyEvent.VK_DOWN) downLadder = false;
+        if (key == KeyEvent.VK_RIGHT){
+            right = false;
+            staying = true;
+        }
+        if (key == KeyEvent.VK_LEFT){
+            left = false;
+            staying = true;
+        }
+        if (key == KeyEvent.VK_UP){
+            upLadder = false;
+            staying = true;
+        }
+        if (key == KeyEvent.VK_DOWN){
+            downLadder = false;
+            staying = true;
+        }
     }
 }

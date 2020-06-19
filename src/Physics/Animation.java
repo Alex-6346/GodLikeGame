@@ -43,20 +43,20 @@ public class Animation {
         makeAnimationLonger(2, jump, "images/jump/jump7.png");
         makeAnimationLonger(2, jump, "images/jump/jump8.png");
         makeAnimationLonger(2, jump, "images/jump/jump9.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump10.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump11.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump12.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump13.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump14.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump15.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump16.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump17.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump18.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump19.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump20.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump21.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump22.png");
-//        makeAnimationLonger(2, jump, "images/jump/jump23.png");
+        makeAnimationLonger(2, jump, "images/jump/jump10.png");
+        makeAnimationLonger(2, jump, "images/jump/jump11.png");
+        makeAnimationLonger(2, jump, "images/jump/jump12.png");
+        makeAnimationLonger(2, jump, "images/jump/jump13.png");
+        makeAnimationLonger(2, jump, "images/jump/jump14.png");
+        makeAnimationLonger(2, jump, "images/jump/jump15.png");
+        makeAnimationLonger(2, jump, "images/jump/jump16.png");
+        makeAnimationLonger(2, jump, "images/jump/jump17.png");
+        makeAnimationLonger(2, jump, "images/jump/jump18.png");
+        makeAnimationLonger(2, jump, "images/jump/jump19.png");
+        makeAnimationLonger(2, jump, "images/jump/jump20.png");
+        makeAnimationLonger(2, jump, "images/jump/jump21.png");
+        makeAnimationLonger(2, jump, "images/jump/jump22.png");
+        makeAnimationLonger(2, jump, "images/jump/jump23.png");
         makeAnimationLonger(2, jump, "images/jump/jump24.png");
         makeAnimationLonger(2, jump, "images/jump/jump25.png");
         makeAnimationLonger(2, jump, "images/jump/jump26.png");
@@ -108,10 +108,54 @@ public class Animation {
         return jump;
     }
 
-    public static ArrayList<String> ctrlMove() {
+    public static ArrayList<String> ctrlMoveR() {
         ArrayList<String> ctrlMove = new ArrayList<>();
-        ctrlMove.add("images/personHalfCut.png");
+        ctrlMove.add("images/crouchR/crouch5.png");
         return ctrlMove;
+    }
+
+    public static ArrayList<String> ctrlMoveL() {
+        ArrayList<String> ctrlMove = new ArrayList<>();
+        ctrlMove.add("images/crouchL/crouch5.png");
+        return ctrlMove;
+    }
+
+    public static ArrayList<String> ctrlR() {
+        ArrayList<String> ctrlR = new ArrayList<>();
+        makeAnimationLonger(3, ctrlR, "images/crouchR/crouch1.png");
+        makeAnimationLonger(3, ctrlR, "images/crouchR/crouch2.png");
+        makeAnimationLonger(3, ctrlR, "images/crouchR/crouch3.png");
+        makeAnimationLonger(3, ctrlR, "images/crouchR/crouch4.png");
+        makeAnimationLonger(3, ctrlR, "images/crouchR/crouch5.png");
+        return ctrlR;
+    }
+    public static ArrayList<String> ctrlL() {
+        ArrayList<String> ctrlL = new ArrayList<>();
+        makeAnimationLonger(3, ctrlL, "images/crouchL/crouch1.png");
+        makeAnimationLonger(3, ctrlL, "images/crouchL/crouch2.png");
+        makeAnimationLonger(3, ctrlL, "images/crouchL/crouch3.png");
+        makeAnimationLonger(3, ctrlL, "images/crouchL/crouch4.png");
+        makeAnimationLonger(3, ctrlL, "images/crouchL/crouch5.png");
+        return ctrlL;
+    }
+
+    public static ArrayList<String> notCtrlR() {
+        ArrayList<String> notCtrlR = new ArrayList<>();
+        makeAnimationLonger(3, notCtrlR, "images/crouchR/crouch5.png");
+        makeAnimationLonger(3, notCtrlR, "images/crouchR/crouch4.png");
+        makeAnimationLonger(3, notCtrlR, "images/crouchR/crouch3.png");
+        makeAnimationLonger(3, notCtrlR, "images/crouchR/crouch2.png");
+        makeAnimationLonger(3, notCtrlR, "images/crouchR/crouch1.png");
+        return notCtrlR;
+    }
+    public static ArrayList<String> notCtrlL() {
+        ArrayList<String> notCtrlL = new ArrayList<>();
+        makeAnimationLonger(3, notCtrlL, "images/crouchL/crouch5.png");
+        makeAnimationLonger(3, notCtrlL, "images/crouchL/crouch4.png");
+        makeAnimationLonger(3, notCtrlL, "images/crouchL/crouch3.png");
+        makeAnimationLonger(3, notCtrlL, "images/crouchL/crouch2.png");
+        makeAnimationLonger(3, notCtrlL, "images/crouchL/crouch1.png");
+        return notCtrlL;
     }
 
     public void setTypeAnimation(ArrayList<String> newTypeAnimation) {

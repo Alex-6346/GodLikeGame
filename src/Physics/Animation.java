@@ -108,13 +108,13 @@ public class Animation {
         return jump;
     }
 
-    public static ArrayList<String> ctrlMoveR() {
+    public static ArrayList<String> ctrlStayR() {
         ArrayList<String> ctrlMove = new ArrayList<>();
         ctrlMove.add("images/crouchR/crouch5.png");
         return ctrlMove;
     }
 
-    public static ArrayList<String> ctrlMoveL() {
+    public static ArrayList<String> ctrlStayL() {
         ArrayList<String> ctrlMove = new ArrayList<>();
         ctrlMove.add("images/crouchL/crouch5.png");
         return ctrlMove;
@@ -137,6 +137,24 @@ public class Animation {
         makeAnimationLonger(3, ctrlL, "images/crouchL/crouch4.png");
         makeAnimationLonger(3, ctrlL, "images/crouchL/crouch5.png");
         return ctrlL;
+    }
+
+    public static ArrayList<String> moveCtrlR() {
+        ArrayList<String> moveCtrlR1 = new ArrayList<>();
+        makeAnimationLonger(6, moveCtrlR1, "images/moveCrouchR/moveCrouch1.1.png");
+        makeAnimationLonger(6, moveCtrlR1, "images/moveCrouchR/moveCrouch1.2.png");
+        makeAnimationLonger(6, moveCtrlR1, "images/moveCrouchR/moveCrouch2.1.png");
+        makeAnimationLonger(6, moveCtrlR1, "images/moveCrouchR/moveCrouch2.2.png");
+        return moveCtrlR1;
+    }
+
+    public static ArrayList<String> moveCtrlL() {
+        ArrayList<String> moveCtrlL1 = new ArrayList<>();
+        makeAnimationLonger(6, moveCtrlL1, "images/moveCrouchL/moveCrouch1.1.png");
+        makeAnimationLonger(6, moveCtrlL1, "images/moveCrouchL/moveCrouch1.2.png");
+        makeAnimationLonger(6, moveCtrlL1, "images/moveCrouchL/moveCrouch2.1.png");
+        makeAnimationLonger(6, moveCtrlL1, "images/moveCrouchL/moveCrouch2.2.png");
+        return moveCtrlL1;
     }
 
     public static ArrayList<String> notCtrlR() {

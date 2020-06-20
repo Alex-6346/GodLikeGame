@@ -51,7 +51,7 @@ public class Main extends JPanel implements Runnable, KeyListener, MouseListener
 
     @Override
     public void keyTyped(KeyEvent e) {
-
+        gameStateManager.keyTyped(e.getKeyCode());
     }
 
     @Override

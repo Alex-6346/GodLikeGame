@@ -14,6 +14,7 @@ public abstract class GameState {
     public abstract void tick();
     public abstract void draw(Graphics g);
     public abstract void keyPressed(int key);
+    public abstract void keyTyped(int key);
     public abstract void keyReleased(int key);
     public abstract void mouseClicked(MouseEvent e);
     public abstract void mouseEntered(MouseEvent e);

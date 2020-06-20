@@ -160,6 +160,11 @@ public class Level3State extends GameState {
     }
 
     @Override
+    public void keyTyped(int key) {
+
+    }
+
+    @Override
     public void keyReleased(int key) {
         player.keyReleased(key);
     }

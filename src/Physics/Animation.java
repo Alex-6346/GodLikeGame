@@ -141,19 +141,23 @@ public class Animation {
 
     public static ArrayList<String> moveCtrlR() {
         ArrayList<String> moveCtrlR1 = new ArrayList<>();
-        makeAnimationLonger(6, moveCtrlR1, "images/moveCrouchR/moveCrouch1.1.png");
-        makeAnimationLonger(6, moveCtrlR1, "images/moveCrouchR/moveCrouch1.2.png");
-        makeAnimationLonger(6, moveCtrlR1, "images/moveCrouchR/moveCrouch2.1.png");
-        makeAnimationLonger(6, moveCtrlR1, "images/moveCrouchR/moveCrouch2.2.png");
+        makeAnimationLonger(12, moveCtrlR1, "images/moveCrouchR/moveCrouch1.1.png");
+        makeAnimationLonger(12, moveCtrlR1, "images/moveCrouchR/moveCrouch1.2.png");
+        makeAnimationLonger(15, moveCtrlR1, "images/crouchR/crouch5.png");
+        makeAnimationLonger(12, moveCtrlR1, "images/moveCrouchR/moveCrouch2.1.png");
+        makeAnimationLonger(12, moveCtrlR1, "images/moveCrouchR/moveCrouch2.2.png");
+        makeAnimationLonger(15, moveCtrlR1, "images/crouchR/crouch5.png");
         return moveCtrlR1;
     }
 
     public static ArrayList<String> moveCtrlL() {
         ArrayList<String> moveCtrlL1 = new ArrayList<>();
-        makeAnimationLonger(6, moveCtrlL1, "images/moveCrouchL/moveCrouch1.1.png");
-        makeAnimationLonger(6, moveCtrlL1, "images/moveCrouchL/moveCrouch1.2.png");
-        makeAnimationLonger(6, moveCtrlL1, "images/moveCrouchL/moveCrouch2.1.png");
-        makeAnimationLonger(6, moveCtrlL1, "images/moveCrouchL/moveCrouch2.2.png");
+        makeAnimationLonger(12, moveCtrlL1, "images/moveCrouchL/moveCrouch1.1.png");
+        makeAnimationLonger(12, moveCtrlL1, "images/moveCrouchL/moveCrouch1.2.png");
+        makeAnimationLonger(15, moveCtrlL1, "images/crouchL/crouch5.png");
+        makeAnimationLonger(12, moveCtrlL1, "images/moveCrouchL/moveCrouch2.1.png");
+        makeAnimationLonger(12, moveCtrlL1, "images/moveCrouchL/moveCrouch2.2.png");
+        makeAnimationLonger(15, moveCtrlL1, "images/crouchL/crouch5.png");
         return moveCtrlL1;
     }
 

@@ -70,6 +70,11 @@ public class HelpState extends GameState {
     }
 
     @Override
+    public void keyTyped(int key) {
+
+    }
+
+    @Override
     public void keyReleased(int key) {
 
     }

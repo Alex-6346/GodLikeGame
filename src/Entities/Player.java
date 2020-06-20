@@ -20,6 +20,7 @@ public class Player {
 
     private boolean right = false, left = false, jumping = false, falling = false, upLadder = false, downLadder = false, halfCut = false, ctrlReleased = false;
     private boolean beingOnLadder = false;
+    private boolean first = true;
     private boolean turnRight = true;
     private boolean topCollision = false;
     public static boolean isLvl3 = false;
@@ -145,17 +146,12 @@ public class Player {
             if ((x + moveSpeed) < Main.frame.getWidth()) {
                 x = x + moveSpeed;
             }
-            if (halfCut) {
-                player.setTypeAnimation(Animation.moveCtrlR());
-            }
+
         }
 
         if (left) {
             if ((x - moveSpeed) > 0) {
                 x = x - moveSpeed;
-            }
-            if (halfCut) {
-                player.setTypeAnimation(Animation.moveCtrlL());
             }
         }
 
@@ -285,6 +281,10 @@ public class Player {
         player.update();
     }
 
+    public void keyTyped(int key, Block[] b, Ladder[] l, EObjects[] e){
+
+    }
+
     public void keyPressed(int key, Block[] b, Ladder[] l, EObjects[] e) {
         if (key == KeyEvent.VK_RIGHT) {
             right = true;
@@ -299,7 +299,11 @@ public class Player {
                 }
             } else {
                 if (halfCut) {
-                    player.setTypeAnimation(Animation.moveCtrlR());
+                    if(first){
+                        player.setTypeAnimation(Animation.moveCtrlR());
+                        first = false;
+                    }
+
                 }
             }
             turnRight = true;
@@ -317,7 +321,10 @@ public class Player {
                 }
             } else {
                 if (halfCut) {
-                    player.setTypeAnimation(Animation.moveCtrlL());
+                    if(first){
+                        player.setTypeAnimation(Animation.moveCtrlL());
+                        first = false;
+                    }
                 }
             }
             turnRight = false;
@@ -453,12 +460,14 @@ public class Player {
             right = false;
             if(halfCut){
                 player.setTypeAnimation(Animation.ctrlStayR());
+                first = true;
             }
         }
         if (key == KeyEvent.VK_LEFT){
             left = false;
             if(halfCut){
                 player.setTypeAnimation(Animation.ctrlStayL());
+                first = true;
             }
         }
         if (key == KeyEvent.VK_UP) upLadder = false;

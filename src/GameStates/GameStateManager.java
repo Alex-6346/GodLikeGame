@@ -26,6 +26,10 @@ public class GameStateManager {
         states.peek().keyPressed(key);
     }
 
+    public void keyTyped(int key){
+        states.peek().keyTyped(key);
+    }
+
     public void keyReleased(int key){
         states.peek().keyReleased(key);
     }

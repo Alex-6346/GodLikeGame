@@ -47,13 +47,13 @@ public class Level3State extends GameState {
         time = "90";
         Player.isLvl3 = true;
         playerImage = new Animation(Animation.stayR());
-        background = new ImageIcon("images/level3Background.jpg").getImage();
-        hole = new ImageIcon("images/lvl3Hole.png").getImage();
+        background = new ImageIcon("images/Lvl3/level3Background.jpg").getImage();
+        hole = new ImageIcon("images/Lvl3/lvl3Hole.png").getImage();
         eBefore = new ImageIcon("images/eBefore.jpg").getImage();
         eAfter = new ImageIcon("images/eAfter.jpg").getImage();
         empty = new ImageIcon("images/empty.png").getImage();
-        fruit = new ImageIcon("images/lvl3Fruit.png").getImage();
-        potion = new ImageIcon("images/lvl3Potion.png").getImage();
+        fruit = new ImageIcon("images/Lvl3/lvl3Fruit.png").getImage();
+        potion = new ImageIcon("images/Lvl3/lvl3Potion.png").getImage();
         player = new Player(playerImage, 60, 130, 100, 350, gameStateManager);
 
         b = new Block[12];

@@ -2,14 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1ccfa34-0a3a-4011-a4ce-3efb51dd98d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/GameStates/ChooseLevelState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL1/move1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL1/move2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL1/move3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL1/move4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL1/move5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL1/move6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL1/move7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL2/move1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL2/move2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL2/move3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL2/move4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL2/move5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL2/move6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveL2/move7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR1/move1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR1/move2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR1/move3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR1/move4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR1/move5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR1/move6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR1/move7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR2/move1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR2/move2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR2/move3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR2/move4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR2/move5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR2/move6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/moveR2/move7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/stairs/stairs1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/stairs/stairs2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/stairs/stairs3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/stairs/stairs4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/stairs/stairs5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/stairs/stairs6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/turn/turn1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/turn/turn2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/turn/turn3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/level3Background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/Lvl3/level3Background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/lvl3Fruit.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Lvl3/lvl3Fruit.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/lvl3Hole.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Lvl3/lvl3Hole.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/lvl3Potion.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/Lvl3/lvl3Potion.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStates/HelpState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/HelpState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameStates/Level1State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level1State.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameStates/Level3State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level3State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStates/Level4State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level4State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStates/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/MenuState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Physics/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Physics/Animation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +85,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\E6530\GodLikeGame\images\Lvl4" />
-      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game6\images\moveCrouchL" />
-      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game6\images" />
-      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game7\images" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="GameStates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game6\images" />
+      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game6\images\Lvl3" />
+      <recent name="C:\Users\E6530\GodLikeGame\images\Lvl4" />
+      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game6\images\moveCrouchL" />
+      <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game7\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -219,38 +258,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592590140829" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1592745818582">
+    <state width="1493" height="172" key="GridCell.Tab.0.bottom" timestamp="1592765636072">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592745818582" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1592745818582">
+    <state width="1493" height="172" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592765636072" />
+    <state width="1493" height="172" key="GridCell.Tab.0.center" timestamp="1592765636072">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592745818582" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1592745818582">
+    <state width="1493" height="172" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592765636072" />
+    <state width="1493" height="172" key="GridCell.Tab.0.left" timestamp="1592765636072">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592745818582" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1592745818582">
+    <state width="1493" height="172" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592765636072" />
+    <state width="1493" height="172" key="GridCell.Tab.0.right" timestamp="1592765636072">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592745818582" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1592511031509">
+    <state width="1493" height="172" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592765636072" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1592762531563">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592511031509" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1592511031509">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592762531563" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1592762531562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592511031509" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1592511031509">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592762531562" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1592762531562">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592511031509" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1592511031509">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592762531562" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1592762531563">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592511031509" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592762531563" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1592742774529">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -263,9 +302,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1592731230156" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1592729462518">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1592764869516">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1592729462518" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1592764869516" />
   </component>
 </project>

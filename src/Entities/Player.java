@@ -115,9 +115,30 @@ public class Player {
                 }
             }
 
+            if (!jumping &&(Collision.playerBlock(new Point(iX, iY + height + 50), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width / 2, iY + height + 50), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width, iY + height + 50), b[i]))) {
+                if (turnRight) {
+                    player.setTypeAnimation(Animation.landingR());
+                } else player.setTypeAnimation(Animation.landingL());
+                TimerTask task2 = new TimerTask() {
+                    @Override
+                    public void run() {
+                        if (turnRight) {
+                            player.setTypeAnimation(Animation.stayR());
+                        } else {
+                            player.setTypeAnimation(Animation.stayL());
+                        }
+                    }
+                };
+                long delay = 200;
+                timerCtrlUp = new Timer();
+                timerCtrlUp.schedule(task2, delay);
+
+
+            }
 
             //collision while falling
-
             if (Collision.playerBlock(new Point(iX, iY + height + iMaxFallSpeed), b[i]) ||
                     Collision.playerBlock(new Point(iX + width / 10, iY + height + iMaxFallSpeed), b[i]) ||
                     Collision.playerBlock(new Point(iX + 2 * width / 10, iY + height + iMaxFallSpeed), b[i]) ||
@@ -281,7 +302,7 @@ public class Player {
         player.update();
     }
 
-    public void keyTyped(int key, Block[] b, Ladder[] l, EObjects[] e){
+    public void keyTyped(int key, Block[] b, Ladder[] l, EObjects[] e) {
 
     }
 
@@ -295,15 +316,29 @@ public class Player {
                 } else if (jumping) {
                     player.setTypeAnimation(Animation.jumpR());
                 } else {
-                    player.setTypeAnimation(Animation.stayR());
+                    player.setTypeAnimation(Animation.turnRight());
+                    TimerTask task = new TimerTask() {
+                        @Override
+                        public void run() {
+                            player.setTypeAnimation(Animation.moveR());
+                        }
+                    };
+                    long delay = 100;
+                    timerCtrlUp = new Timer();
+                    timerCtrlUp.schedule(task, delay);
                 }
+                turnRight = true;
             } else {
                 if (halfCut) {
-                    if(first){
+                    if (first && !jumping) {
                         player.setTypeAnimation(Animation.moveCtrlR());
                         first = false;
                     }
-
+                } else {
+                    if (first && !jumping) {
+                        player.setTypeAnimation(Animation.moveR());
+                        first = false;
+                    }
                 }
             }
             turnRight = true;
@@ -317,12 +352,26 @@ public class Player {
                 } else if (jumping) {
                     player.setTypeAnimation(Animation.jumpL());
                 } else {
-                    player.setTypeAnimation(Animation.stayL());
+                    player.setTypeAnimation(Animation.turnLeft());
+                    TimerTask task = new TimerTask() {
+                        @Override
+                        public void run() {
+                            player.setTypeAnimation(Animation.moveL());
+                        }
+                    };
+                    long delay = 100;
+                    timerCtrlUp = new Timer();
+                    timerCtrlUp.schedule(task, delay);
                 }
             } else {
                 if (halfCut) {
-                    if(first){
+                    if (first && !jumping) {
                         player.setTypeAnimation(Animation.moveCtrlL());
+                        first = false;
+                    }
+                } else {
+                    if (first && !jumping) {
+                        player.setTypeAnimation(Animation.moveL());
                         first = false;
                     }
                 }
@@ -379,6 +428,12 @@ public class Player {
                                     Collision.playerLadder(new Point(iX + width, iY + height - 2), l[i]))) {
                         upLadder = true;
                         beingOnLadder = true;
+                        if (first) {
+                            if (turnRight) {
+                                player.setTypeAnimation(Animation.stairsR());
+                            } else player.setTypeAnimation(Animation.stairsL());
+                            first = false;
+                        }
                     } else {
                         if (!beingOnLadder) {
                             upLadder = false;
@@ -453,25 +508,37 @@ public class Player {
                 }
             }
         }
-        
+
     }
 
     public void keyReleased(int key) {
-        if (key == KeyEvent.VK_RIGHT){
+        if (key == KeyEvent.VK_RIGHT) {
             right = false;
-            if(halfCut){
+            if (halfCut) {
                 player.setTypeAnimation(Animation.ctrlStayR());
                 first = true;
-            }
-        }
-        if (key == KeyEvent.VK_LEFT){
-            left = false;
-            if(halfCut){
-                player.setTypeAnimation(Animation.ctrlStayL());
+            } else if (!jumping) {
+                player.setTypeAnimation(Animation.stayR());
                 first = true;
             }
         }
-        if (key == KeyEvent.VK_UP) upLadder = false;
+        if (key == KeyEvent.VK_LEFT) {
+            left = false;
+            if (halfCut) {
+                player.setTypeAnimation(Animation.ctrlStayL());
+                first = true;
+            } else if (!jumping) {
+                player.setTypeAnimation(Animation.stayL());
+                first = true;
+            }
+        }
+        if (key == KeyEvent.VK_UP) {
+            if (upLadder) {
+                player.setTypeAnimation(Animation.stayStairs());
+                first = true;
+            }
+            upLadder = false;
+        }
         if (key == KeyEvent.VK_DOWN) downLadder = false;
     }
 }

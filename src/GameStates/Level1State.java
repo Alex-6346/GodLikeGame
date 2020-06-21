@@ -81,7 +81,7 @@ public class Level1State extends GameState {
 
 
         l = new Ladder[1];
-        l[0]= new Ladder(2000,2000,0,0);
+        l[0]= new Ladder(20,500,130,400);
 
         e = new EObjects[1];
         e[0] = new EObjects(710, 480, eBefore, eAfter, true);

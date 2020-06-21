@@ -15,6 +15,7 @@ public class HelpState extends GameState {
     private Image ctrlButton;
     private Image escButton;
     private  Image eButton;
+    private Image restartButton;
 
     public HelpState(GameStateManager gsm) {
         super(gsm);
@@ -27,6 +28,7 @@ public class HelpState extends GameState {
         ctrlButton = new ImageIcon("images/CtrlButton.png").getImage();
         escButton = new ImageIcon("images/escButton.png").getImage();
         eButton = new ImageIcon("images/e-Button.png").getImage();
+        restartButton = new ImageIcon("images/restartbutton.png").getImage();
     }
 
     @Override
@@ -36,12 +38,15 @@ public class HelpState extends GameState {
 
     @Override
     public void draw(Graphics g) {
-        g.setColor(new Color(135, 206, 250));
+        g.setColor(Color.DARK_GRAY);
         g.fillRect(0, 0, Main.frame.getWidth(), Main.frame.getHeight());
         g.setFont(new Font("Arial", Font.PLAIN, 100));
         g.setColor(Color.WHITE);
-        g.drawString("Controls:", Main.frame.getWidth()/2-175,100);
+        g.drawString("Controls:", Main.frame.getWidth()/2-175,75);
         g.setFont(new Font("Arial", Font.PLAIN, 80));
+
+        g.drawString("Interact with objects - ", Main.frame.getWidth()/2-450,160);
+        g.drawImage(eButton,1030,95,80,80,null);
         g.drawString("Move - Arrow Keys", Main.frame.getWidth()/2-325,240);
         g.drawString("Jump - ", Main.frame.getWidth()/2-200,320);
         g.drawImage(arrowUp,775,255,80,80,null);
@@ -51,8 +56,9 @@ public class HelpState extends GameState {
         g.drawImage(arrowUpDown,1000,375,80,160,null);
         g.drawString("Pause - ", Main.frame.getWidth()/2-225,560);
         g.drawImage(escButton,775,490,90,90,null);
-        g.drawString("Interact with objects - ", Main.frame.getWidth()/2-450,640);
-        g.drawImage(eButton,1030,570,80,80,null);
+
+        g.drawString("Restart - ", Main.frame.getWidth()/2-250,645);
+        g.drawImage(restartButton,795,585,80,80,null);
 
         g.setColor(Color.GREEN);
         g.setFont(new Font("Arial", Font.PLAIN, 120));

@@ -33,12 +33,16 @@ public class Level3State extends GameState {
     private Image fruit;
     private Image potion;
 
+    public static boolean lvl3IsUnlocked;
+
     public Level3State(GameStateManager gsm) {
         super(gsm);
     }
 
     @Override
     public void init() {
+
+        lvl3IsUnlocked=true;
         seconds = 90;
         time = "90";
         Player.isLvl3 = true;
@@ -156,7 +160,9 @@ public class Level3State extends GameState {
     @Override
     public void keyPressed(int key) {
         player.keyPressed(key, b, l, e);
-
+        if(key == KeyEvent.VK_R){
+            gameStateManager.states.push(new Level3State(gameStateManager));
+        }
     }
 
     @Override

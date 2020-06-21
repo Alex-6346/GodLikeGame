@@ -6,6 +6,8 @@ import java.awt.event.MouseEvent;
 
 import MainPack.Main;
 
+import static java.awt.Color.DARK_GRAY;
+
 public class MenuState extends GameState {
 
     private int currentSelection = 0;
@@ -28,7 +30,7 @@ public class MenuState extends GameState {
 
     @Override
     public void draw(Graphics g) {
-        g.setColor(new Color(135, 206, 250));
+        g.setColor(Color.DARK_GRAY);
         g.fillRect(0, 0, Main.frame.getWidth(), Main.frame.getHeight());
         for (int i = 0; i < options.length; i++) {
             if (i == currentSelection) {
@@ -53,7 +55,7 @@ public class MenuState extends GameState {
         }
         if (key == KeyEvent.VK_ENTER){
             if(currentSelection == 0){
-                gameStateManager.states.push(new Level4State(gameStateManager));
+                gameStateManager.states.push(new ChooseLevelState(gameStateManager));
             }
 
             if(currentSelection == 1) {

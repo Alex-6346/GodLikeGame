@@ -129,6 +129,9 @@ public class Level1State extends GameState {
     public void keyPressed(int key) {
         player.keyPressed(key, b, l, e);
 
+        if(key == KeyEvent.VK_R){
+            gameStateManager.states.push(new Level1State(gameStateManager));
+        }
     }
 
     @Override

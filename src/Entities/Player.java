@@ -53,7 +53,7 @@ public class Player {
     private GameStateManager gameStateManager;
     private Timer timerCtrlDown;
     private Timer timerCtrlUp;
-    private Timer timerCtrl;
+
     private Timer timerJump;
 
     public Player(Animation player, int width, int height, int x, int y, GameStateManager gameStateManager) {

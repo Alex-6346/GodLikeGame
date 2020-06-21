@@ -33,6 +33,7 @@ public class Level4State extends GameState {
     private Image goomba;
     private Image bowser;
     private Image yoshi;
+    public static boolean lvl4IsUnlocked;
 
     private Image uppertube;
     private Image downtube;
@@ -41,8 +42,10 @@ public class Level4State extends GameState {
         super(gsm);
     }
 
+
     @Override
     public void init() {
+        lvl4IsUnlocked = true;
         seconds = 120;
         time = "120";
         Player.isLvl1=false;
@@ -191,6 +194,10 @@ public class Level4State extends GameState {
     @Override
     public void keyPressed(int key) {
         player.keyPressed(key, b, l, e);
+
+        if(key == KeyEvent.VK_R){
+            gameStateManager.states.push(new Level4State(gameStateManager));
+        }
 
     }
 

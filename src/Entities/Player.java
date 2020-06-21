@@ -24,6 +24,7 @@ public class Player {
     private boolean turnRight = true;
     private boolean topCollision = false;
     public static boolean isLvl3 = false;
+    public static boolean isLvl2=false;
     public static boolean isLvl1 = false;
     public static boolean isLvl3Cellar = false;
     private boolean actionE = false;

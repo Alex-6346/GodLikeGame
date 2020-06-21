@@ -115,7 +115,7 @@ public class Player {
                 }
             }
 
-            if (!jumping &&(Collision.playerBlock(new Point(iX, iY + height + 50), b[i]) ||
+            if (!halfCut && !jumping &&(Collision.playerBlock(new Point(iX, iY + height + 50), b[i]) ||
                     Collision.playerBlock(new Point(iX + width / 2, iY + height + 50), b[i]) ||
                     Collision.playerBlock(new Point(iX + width, iY + height + 50), b[i]))) {
                 if (turnRight) {

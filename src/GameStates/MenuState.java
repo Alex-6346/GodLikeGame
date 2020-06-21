@@ -53,7 +53,7 @@ public class MenuState extends GameState {
         }
         if (key == KeyEvent.VK_ENTER){
             if(currentSelection == 0){
-                gameStateManager.states.push(new Level1State(gameStateManager));
+                gameStateManager.states.push(new Level4State(gameStateManager));
             }
 
             if(currentSelection == 1) {

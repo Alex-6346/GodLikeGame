@@ -453,6 +453,7 @@ public class Player {
                 }
             }
         }
+        
     }
 
     public void keyReleased(int key) {

@@ -34,6 +34,9 @@ public class Level4State extends GameState {
     private Image bowser;
     private Image yoshi;
 
+    private Image uppertube;
+    private Image downtube;
+
     public Level4State(GameStateManager gsm) {
         super(gsm);
     }
@@ -58,6 +61,9 @@ public class Level4State extends GameState {
         yoshi = new ImageIcon("images/Lvl4/yoshi.png").getImage();
 
         player = new Player(playerImage, 60, 130, 100, 170, gameStateManager);
+
+        uppertube = new ImageIcon("images/Lvl4/uppertube.png").getImage();
+        downtube = new ImageIcon("images/Lvl4/downtube.png").getImage();
 
         b = new Block[20];
 
@@ -178,7 +184,8 @@ public class Level4State extends GameState {
             g.drawString(time, 1260, 80);
         }
         player.draw(g);
-
+        g.drawImage(uppertube,1176, 250, 129,200, null);
+        g.drawImage(downtube,1176, 390, 129,200, null);
     }
 
     @Override

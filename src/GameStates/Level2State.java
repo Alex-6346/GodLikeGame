@@ -22,16 +22,14 @@ public class Level2State extends GameState {
     private Ladder[] l;
     private EObjects[] e;
     private int seconds;
-    String time;
-    Timer timer;
     private Image background;
     Animation playerImage;
     private Image owl;
-    private Image eBefore;
-    private Image eAfter;
+    private Image rope;
+    private Image rocket;
     private Image empty;
-    private Image fruit;
-    private Image potion;
+    private Image fire;
+    private Image sea;
 
     public Level2State(GameStateManager gsm) {
         super(gsm);
@@ -43,17 +41,17 @@ public class Level2State extends GameState {
         playerImage = new Animation(Animation.stayR());
         background = new ImageIcon("images/level2Background.jpg").getImage();
         owl = new ImageIcon("images/owl.png").getImage();
-        eBefore = new ImageIcon("images/eBefore.jpg").getImage();
-        eAfter = new ImageIcon("images/eAfter.jpg").getImage();
+        rope = new ImageIcon("images/rope.png").getImage();
+        rocket = new ImageIcon("images/rocket.png").getImage();
         empty = new ImageIcon("images/empty.png").getImage();
-        fruit = new ImageIcon("images/lvl3Fruit.png").getImage();
-        potion = new ImageIcon("images/lvl3Potion.png").getImage();
-        player = new Player(playerImage, 60, 130, 300, 550, gameStateManager);
+        fire = new ImageIcon("images/fire.png").getImage();
+        sea = new ImageIcon("images/sea.png").getImage();
+        player = new Player(playerImage, 60, 130, 280, 550, gameStateManager);
 
         b = new Block[2];
 
-        b[0] = new Block(0,725,425,10);
-        b[1] = new Block(0, 650, 400, 10);
+        b[0] = new Block(0,725,400,10);
+        b[1] = new Block(0, 610, 300, 10);
 /*
 
         b[2] = new Block(220, 243, 565, 10);
@@ -72,11 +70,13 @@ public class Level2State extends GameState {
         l = new Ladder[1];
         l[0] = new Ladder(995, 365, 100, 220);
 
-        e = new EObjects[4];
+        e = new EObjects[5];
         e[0] = new EObjects(800, 25, owl, empty, true);
-        e[1] = new EObjects(1010, 330, eBefore, eAfter, false);
-        e[2] = new EObjects(850, 500, potion, empty, false);
-        e[3] = new EObjects(300, 160, eBefore, eAfter, false);
+        e[1] = new EObjects(0, 530, rope, empty, true);
+        e[2] = new EObjects(970, 240, fire, empty, false);
+        e[3] = new EObjects(0, 555, sea, empty, false);
+        e[4] = new EObjects(547, 398, rocket, empty, false);
+
 
 
     }
@@ -88,23 +88,23 @@ public class Level2State extends GameState {
             b[i].tick();
         }
 
-        for (int i = 0; i < l.length; i++) {
+        /*for (int i = 0; i < l.length; i++) {
             l[i].tick();
-        }
+        }*/
         for (int i = 0; i < e.length; i++) {
             e[i].tick();
         }
-        player.tickLadder(l);
+        //player.tickLadder(l);
         player.tickEObjects(e);
         player.tickBlock(b);
 
         if (e[0].isActivated()) {
             //b[11] = new Block(1390, 210, 10, 170);
         }
-        if (e[3].isActivated()) {
+        /*if (e[3].isActivated()) {
             //TODO
             //gameStateManager.states.push(new Level4State(gameStateManager));
-        }
+        }*/
         if(player.isFallen){
             //TODO ask menu
             seconds = 90;
@@ -127,7 +127,7 @@ public class Level2State extends GameState {
 
     @Override
     public void keyPressed(int key) {
-        player.keyPressed(key, b, l, e);
+        player.keyPressed(key, b,l, e);
 
     }
 

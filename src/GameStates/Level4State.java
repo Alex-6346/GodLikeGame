@@ -130,40 +130,40 @@ public class Level4State extends GameState {
     }
 
     @Override
-    public void tick() {
-        player.update();
-        for (int i = 0; i < b.length; i++) {
-            b[i].tick();
-        }
-
-        for (int i = 0; i < l.length; i++) {
-            l[i].tick();
-        }
-        for (int i = 0; i < e.length; i++) {
-            e[i].tick();
-        }
-        player.tickLadder(l);
-        player.tickEObjects(e);
-        player.tickBlock(b);
-
-        if (e[1].isActivated()) {
-            b[18] = new Block(2000, 2000, 0, 0);
-        }
-
-        if (e[3].isActivated()) {
-            b[19] = new Block(2000, 2000, 0, 0);
-        }
-
-        if (e[4].isActivated()) {
-            seconds = 120;
-            gameStateManager.states.push(new Level4State(gameStateManager));
-        }
-
-        if(player.isFallen){
-            seconds = 120;
-            gameStateManager.states.push(new Level4State(gameStateManager));
-        }
+public void tick() {
+    player.update();
+    for (int i = 0; i < b.length; i++) {
+        b[i].tick();
     }
+
+    for (int i = 0; i < l.length; i++) {
+        l[i].tick();
+    }
+    for (int i = 0; i < e.length; i++) {
+        e[i].tick();
+    }
+    player.tickLadder(l);
+    player.tickEObjects(e);
+    player.tickBlock(b);
+
+    if (e[1].isActivated()) {
+        b[18] = new Block(2000, 2000, 0, 0);
+    }
+
+    if (e[3].isActivated()) {
+        b[19] = new Block(2000, 2000, 0, 0);
+    }
+
+    if (e[4].isActivated()) {
+        seconds = 120;
+        gameStateManager.states.push(new Level4State(gameStateManager));
+    }
+
+    if(player.isFallen){
+        seconds = 120;
+        gameStateManager.states.push(new Level4State(gameStateManager));
+    }
+}
 
     @Override
     public void draw(Graphics g) {
@@ -173,10 +173,10 @@ public class Level4State extends GameState {
             e[i].draw(g);
         }
         for (int i = 0; i < b.length; i++) {
-         //  b[i].draw(g);
+            //  b[i].draw(g);
         }
         for (int i = 0; i < l.length; i++) {
-           // l[i].draw(g);
+            // l[i].draw(g);
         }
 
         g.setColor(Color.WHITE);

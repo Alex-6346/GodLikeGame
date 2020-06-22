@@ -24,12 +24,16 @@ public class Level2State extends GameState {
     private int seconds;
     private Image background;
     Animation playerImage;
-    private Image owl;
-    private Image rope;
     private Image rocket;
-    private Image empty;
     private Image fire;
     private Image sea;
+private Image sea2;
+    private Image owl,ship2;
+    private Image rope, rope2;
+    private Image stick, ship;
+    private Image empty;
+
+    public static boolean lvl3IsUnlocked;
 
     public Level2State(GameStateManager gsm) {
         super(gsm);
@@ -37,46 +41,49 @@ public class Level2State extends GameState {
 
     @Override
     public void init() {
-        Player.isLvl2 = true;
+
+        lvl3IsUnlocked=true;
+        Player.isLvl3 = true;
         playerImage = new Animation(Animation.stayR());
-        background = new ImageIcon("images/level2Background.jpg").getImage();
-        owl = new ImageIcon("images/owl.png").getImage();
-        rope = new ImageIcon("images/rope.png").getImage();
-        rocket = new ImageIcon("images/rocket.png").getImage();
+        background = new ImageIcon("images/lvl2/level2Background1.jpg").getImage();
+        rocket = new ImageIcon("images/lvl2/rocket.png").getImage();
         empty = new ImageIcon("images/empty.png").getImage();
-        fire = new ImageIcon("images/fire.png").getImage();
-        sea = new ImageIcon("images/sea.png").getImage();
+        fire = new ImageIcon("images/lvl2/fire.png").getImage();
+        sea = new ImageIcon("images/lvl2/sea1.png").getImage();
+        owl = new ImageIcon("images/lvl2/owl.png").getImage();
+        rope = new ImageIcon("images/lvl2/rope.png").getImage();
+        stick = new ImageIcon("images/lvl2/stick.png").getImage();
+        rope2 = new ImageIcon("images/lvl2/rope2.png").getImage();
+        ship=new ImageIcon("images/lvl2/ship1.png").getImage();
+        sea2=new ImageIcon("images/lvl2/sea2.png").getImage();
+        ship2=new ImageIcon("images/lvl2/ship.png").getImage();
         player = new Player(playerImage, 60, 130, 280, 550, gameStateManager);
 
-        b = new Block[2];
+        b = new Block[8];
 
-        b[0] = new Block(0,725,400,10);
-        b[1] = new Block(0, 610, 300, 10);
-/*
+        b[0] = new Block(0, 610, 300, 10);//land1
+        b[1] = new Block(0,725,400,10);//plot
+        b[2] = new Block(127, 481, 105, 10);//island1
+        b[3] = new Block(250, 340, 210, 10);//island2
+        b[4] = new Block(960, 310, 210,10); //rope
+        b[5]=new Block(910, 330, 200,10);//island3
+        b[6]=new Block(460, 600, 410, 10);//middle
+        b[7]=new Block(0, 0, 0, 0);
 
-        b[2] = new Block(220, 243, 565, 10);
-        b[3] = new Block(550, 370, 445, 10);
 
-        b[4] = new Block(1095, 370, 280, 10);
-        b[5] = new Block(30, 480, 660, 10);
-        b[6] = new Block(810, 600, 300, 10);
-        b[7] = new Block(800, 460, 10, 140);
-        b[8] = new Block(1110, 460, 10, 140);
-        b[9] = new Block(800, 450, 165, 10);
-        b[10] = new Block(965, 410, 25, 10);
-        b[11] = new Block(965, 210, 10, 170);*/
 
 
         l = new Ladder[1];
         l[0] = new Ladder(995, 365, 100, 220);
 
-        e = new EObjects[5];
-        e[0] = new EObjects(800, 25, owl, empty, true);
-        e[1] = new EObjects(0, 530, rope, empty, true);
+        e = new EObjects[7];
+        e[0] = new EObjects(20, 490, rope, empty, true);
+        e[1]= new EObjects(450, 250, stick, empty,false);
         e[2] = new EObjects(970, 240, fire, empty, false);
-        e[3] = new EObjects(0, 555, sea, empty, false);
-        e[4] = new EObjects(547, 398, rocket, empty, false);
-
+        e[3] = new EObjects(547, 430, rocket, empty, false);
+        e[4] = new EObjects(1150, 300, owl, empty, false);
+        e[5] = new EObjects(0, 685, sea, empty, false);
+        e[6] = new EObjects(850, 580, ship, empty, false);
 
 
     }
@@ -88,26 +95,31 @@ public class Level2State extends GameState {
             b[i].tick();
         }
 
-        /*for (int i = 0; i < l.length; i++) {
+        for (int i = 0; i < l.length; i++) {
             l[i].tick();
-        }*/
+        }
         for (int i = 0; i < e.length; i++) {
             e[i].tick();
         }
-        //player.tickLadder(l);
+        player.tickLadder(l);
         player.tickEObjects(e);
         player.tickBlock(b);
 
-        if (e[0].isActivated()) {
-            //b[11] = new Block(1390, 210, 10, 170);
+        if(e[0].isActivated()&&e[1].isActivated()){
+            e[0] = new EObjects(250, 255, rope2,rope2, true);
+            b[4] = new Block(460, 310, 470,10);
+            e[2] = new EObjects(970, 240, fire, empty, false);
         }
-        /*if (e[3].isActivated()) {
-            //TODO
-            //gameStateManager.states.push(new Level4State(gameStateManager));
-        }*/
+        if (e[2].isActivated()) e[0] = new EObjects(0,0,empty, empty,false);
+        if(e[3].isActivated()){ e[5]= new EObjects(0, 510, sea2,empty, false );
+        e[6]=new EObjects(0, 0, empty,empty,false );
+        b[7]=new Block(870, 610, 100, 10);
+        }
+        if(e[5].isActivated()){e[0] = new EObjects(20, 490, rope, empty, true);}
+
+
         if(player.isFallen){
             //TODO ask menu
-            seconds = 90;
             gameStateManager.states.push(new Level2State(gameStateManager));
         }
     }
@@ -121,14 +133,17 @@ public class Level2State extends GameState {
         }
         Graphics2D g2 = (Graphics2D) g;
 
+        //g.drawImage(sea, 0, 555, null);
         player.draw(g);
-        //g.drawImage(owl, 705, 369, null);
+
     }
 
     @Override
     public void keyPressed(int key) {
-        player.keyPressed(key, b,l, e);
-
+        player.keyPressed(key, b, l, e);
+        if(key == KeyEvent.VK_R){
+            gameStateManager.states.push(new Level3State(gameStateManager));
+        }
     }
 
     @Override

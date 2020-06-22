@@ -17,7 +17,7 @@ public class ChooseLevelState extends GameState {
     private String[] options = new String[]{"1", "2", "3", "4", "5"};
 
 
-    public static boolean lvl2IsUnlocked = false;
+    public static boolean lvl2IsUnlocked = true;
 
     public static boolean lvl5IsUnlocked = false;
 
@@ -88,15 +88,17 @@ public class ChooseLevelState extends GameState {
             }
 
             if(currentSelection == 1) {
-                //if(lvl2IsUnlocked) gameStateManager.states.push(new Level2State(gameStateManager));
+                 gameStateManager.states.push(new Level2State(gameStateManager));
             }
 
             if(currentSelection == 2){
-               if(lvl3IsUnlocked) gameStateManager.states.push(new Level3State(gameStateManager));
+               //if(lvl3IsUnlocked)
+                   gameStateManager.states.push(new Level3State(gameStateManager));
             }
 
             if(currentSelection == 3){
-                if(lvl4IsUnlocked) gameStateManager.states.push(new Level4State(gameStateManager));
+                //if(lvl4IsUnlocked)
+                    gameStateManager.states.push(new Level4State(gameStateManager));
             }
 
             if(currentSelection == 4){

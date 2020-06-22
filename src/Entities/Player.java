@@ -152,7 +152,7 @@ public class Player {
                     Collision.playerBlock(new Point(iX + 9 * width / 10, iY + height + iMaxFallSpeed), b[i]) ||
                     Collision.playerBlock(new Point(iX + width, iY + height + iMaxFallSpeed), b[i])) {
                 if (!upLadder) {
-                    y = b[i].getY() - height;//player.getHeight(null);
+                    y = b[i].getY() - height;
                 }
                 falling = false;
                 topCollision = true;

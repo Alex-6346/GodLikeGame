@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1ccfa34-0a3a-4011-a4ce-3efb51dd98d5" name="Default Changelist" comment="" />
+    <list default="true" id="f1ccfa34-0a3a-4011-a4ce-3efb51dd98d5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/level2Background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStates/ChooseLevelState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/ChooseLevelState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStates/Level2State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level2State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStates/Level4State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level4State.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +43,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -48,6 +57,18 @@
       <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game6\images\moveCrouchL" />
       <recent name="C:\Users\svitl\OneDrive\Рабочий стол\Game7\images" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Display" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -69,18 +90,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -97,6 +106,7 @@
       <workItem from="1592464243388" duration="3520000" />
       <workItem from="1592568860480" duration="12343000" />
       <workItem from="1592645871399" duration="2574000" />
+      <workItem from="1592829555617" duration="14521000" />
     </task>
     <task id="LOCAL-00001" summary="waiting for help in the helpMenu">
       <created>1592391928522</created>

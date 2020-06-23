@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f1ccfa34-0a3a-4011-a4ce-3efb51dd98d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/level1Background.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592893150798</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="adding normal restarts and choosing levels">
+      <created>1592894581857</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1592894581857</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +231,8 @@
     <MESSAGE value="adding animation" />
     <MESSAGE value="adding lvl5&#10;improving animation" />
     <MESSAGE value="adding portal to lvl1" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding portal to lvl1" />
+    <MESSAGE value="adding normal restarts and choosing levels" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding normal restarts and choosing levels" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="168" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1592298927345">
@@ -240,10 +247,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="155" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1592471610166" />
-    <state x="387" y="0" key="CommitChangelistDialog2" timestamp="1592893149514">
+    <state x="387" y="0" key="CommitChangelistDialog2" timestamp="1592894581008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="387" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592893149514" />
+    <state x="387" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592894581008" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1592590140829">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -280,10 +287,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592762531563" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1592893153247">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1592894607364">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592893153247" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592894607364" />
     <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1592741294070">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

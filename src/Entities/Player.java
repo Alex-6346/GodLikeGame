@@ -18,13 +18,15 @@ import java.util.TimerTask;
 
 public class Player {
 
-    private boolean right = false, left = false, jumping = false, falling = false, upLadder = false, downLadder = false, halfCut = false, ctrlReleased = false;
+    private boolean right = false, left = false, jumping = false, falling = false, upLadder = false, downLadder = false, halfCut = false;
     private boolean beingOnLadder = false;
+    private boolean isOnLoader = false;
     private boolean first = true;
+    private boolean isLong = true;
     private boolean turnRight = true;
     private boolean topCollision = false;
     public static boolean isLvl3 = false;
-    public static boolean isLvl2=false;
+    public static boolean isLvl5 = false;
     public static boolean isLvl1 = false;
     public static boolean isLvl3Cellar = false;
     private boolean actionE = false;
@@ -87,7 +89,7 @@ public class Player {
 
 
         }
-
+        int isFall = 0;
         for (int i = 0; i < b.length; i++) {
 
             //collision while moving right
@@ -116,28 +118,33 @@ public class Player {
                 }
             }
 
-            if (!halfCut && !jumping &&(Collision.playerBlock(new Point(iX, iY + height + 50), b[i]) ||
-                    Collision.playerBlock(new Point(iX + width / 2, iY + height + 50), b[i]) ||
-                    Collision.playerBlock(new Point(iX + width, iY + height + 50), b[i]))) {
+            if ((player.getName() == "jumpStayL" || player.getName() == "jumpStayR" ||
+                    player.getName() == "jumpL" || player.getName() == "jumpR") && !halfCut && !jumping && (Collision.playerBlock(new Point(iX, iY + height + 5), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width / 2, iY + height + 5), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width, iY + height + 5), b[i]))) {
                 if (turnRight) {
-                    player.setTypeAnimation(Animation.landingR());
-                } else player.setTypeAnimation(Animation.landingL());
-                TimerTask task2 = new TimerTask() {
-                    @Override
-                    public void run() {
-                        if (turnRight) {
-                            player.setTypeAnimation(Animation.stayR());
-                        } else {
-                            player.setTypeAnimation(Animation.stayL());
-                        }
-                    }
-                };
-                long delay = 200;
-                timerCtrlUp = new Timer();
-                timerCtrlUp.schedule(task2, delay);
+                    player.setTypeAnimation(Animation.stayR());
+                } else {
+                    player.setTypeAnimation(Animation.stayL());
+                }
+            }
 
+            if (!(Collision.playerBlock(new Point(iX, iY + height + 5), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width / 2, iY + height + 5), b[i]) ||
+                    Collision.playerBlock(new Point(iX + width, iY + height + 5), b[i]))) {
+                isFall++;
+            }
+
+            if (isFall == b.length && player.getName() != "jumpL" && player.getName() != "jumpR" && player.getName() != "stairsL"
+                    && player.getName() != "stairsR" && player.getName() != "stayStairs" && !isOnLoader) {
+                if (turnRight) {
+                    player.setTypeAnimation(Animation.jumpStayR());
+                } else {
+                    player.setTypeAnimation(Animation.jumpStayL());
+                }
 
             }
+
 
             //collision while falling
             if (Collision.playerBlock(new Point(iX, iY + height + iMaxFallSpeed), b[i]) ||
@@ -165,17 +172,28 @@ public class Player {
         topCollision = false;
 
         if (right) {
-            if ((x + moveSpeed) < Main.frame.getWidth()) {
-                x = x + moveSpeed;
+            if (!isLvl5) {
+                if ((x + moveSpeed) < Main.frame.getWidth()) {
+                    x = x + moveSpeed;
+                }
+            } else {
+                if (x > 1360 && y == 120) {
+                    x = 1280;
+                    y = 665;
+                } else if (x > 1360 && y >= 605) {
+                    x = 1300;
+                    y = 120;
+                    player.setTypeAnimation(Animation.stayR());
+                } else {
+                    x = x + moveSpeed;
+                }
             }
-
         }
 
         if (left) {
-            if ((x - moveSpeed) > 0) {
-                x = x - moveSpeed;
-            }
+            x = x - moveSpeed;
         }
+
 
         if (halfCut == true) {
             if (counterOfCtrl == 2) {
@@ -255,6 +273,7 @@ public class Player {
     public void tickLadder(Ladder[] l) {
         int iX = (int) x;
         int iY = (int) y;
+        int counter = 0;
         beingOnLadder = false;
         for (int i = 0; i < l.length; i++) {
             if ((Collision.playerLadder(new Point(iX, iY), l[i]) &&
@@ -266,12 +285,17 @@ public class Player {
                     (Collision.playerLadder(new Point(iX, iY + height - 2), l[i]) &&
                             Collision.playerLadder(new Point(iX + width, iY + height - 2), l[i]))) {
                 falling = false;
+                counter++;
                 beingOnLadder = true;
             } else {
                 if (!beingOnLadder) {
                     falling = true;
                 }
             }
+
+            if (counter > 0) {
+                isOnLoader = true;
+            } else isOnLoader = false;
         }
 
         if (upLadder) {
@@ -313,36 +337,42 @@ public class Player {
             upLadder = false;
             if (!turnRight) {
                 if (halfCut) {
-                    player.setTypeAnimation(Animation.ctrlStayR());
-                } else if (jumping) {
-                    player.setTypeAnimation(Animation.jumpR());
+                    player.setTypeAnimation(Animation.jumpStayR());
+                    turnRight = true;
                 } else {
-                    player.setTypeAnimation(Animation.turnRight());
-                    TimerTask task = new TimerTask() {
-                        @Override
-                        public void run() {
-                            player.setTypeAnimation(Animation.moveR());
-                        }
-                    };
-                    long delay = 100;
-                    timerCtrlUp = new Timer();
-                    timerCtrlUp.schedule(task, delay);
+                    if (player.getName() != "jumpStayL" && player.getName() != "jumpStayR" &&
+                            player.getName() != "jumpL" && player.getName() != "jumpR") {
+                        player.setTypeAnimation(Animation.turnRight());
+                        TimerTask task = new TimerTask() {
+                            @Override
+                            public void run() {
+                                player.setTypeAnimation(Animation.moveR());
+                            }
+                        };
+                        long delay = 100;
+                        timerCtrlUp = new Timer();
+                        timerCtrlUp.schedule(task, delay);
+                        turnRight = true;
+                    }
                 }
-                turnRight = true;
+
             } else {
                 if (halfCut) {
                     if (first && !jumping) {
                         player.setTypeAnimation(Animation.moveCtrlR());
                         first = false;
+                        turnRight = true;
                     }
                 } else {
-                    if (first && !jumping) {
+                    if (first && !jumping && player.getName() != "jumpStayL" && player.getName() != "jumpStayR" &&
+                            player.getName() != "jumpL" && player.getName() != "jumpR") {
                         player.setTypeAnimation(Animation.moveR());
                         first = false;
+                        turnRight = true;
                     }
                 }
             }
-            turnRight = true;
+
         }
         if (key == KeyEvent.VK_LEFT) {
             left = true;
@@ -350,53 +380,62 @@ public class Player {
             if (turnRight) {
                 if (halfCut) {
                     player.setTypeAnimation(Animation.ctrlStayL());
-                } else if (jumping) {
-                    player.setTypeAnimation(Animation.jumpL());
+                    turnRight = false;
                 } else {
-                    player.setTypeAnimation(Animation.turnLeft());
-                    TimerTask task = new TimerTask() {
-                        @Override
-                        public void run() {
-                            player.setTypeAnimation(Animation.moveL());
-                        }
-                    };
-                    long delay = 100;
-                    timerCtrlUp = new Timer();
-                    timerCtrlUp.schedule(task, delay);
+                    if (player.getName() != "jumpStayL" && player.getName() != "jumpStayR" &&
+                            player.getName() != "jumpL" && player.getName() != "jumpR") {
+                        player.setTypeAnimation(Animation.turnLeft());
+                        TimerTask task = new TimerTask() {
+                            @Override
+                            public void run() {
+                                player.setTypeAnimation(Animation.moveL());
+                            }
+                        };
+                        long delay = 100;
+                        timerCtrlUp = new Timer();
+                        timerCtrlUp.schedule(task, delay);
+                        turnRight = false;
+                    }
                 }
             } else {
                 if (halfCut) {
                     if (first && !jumping) {
                         player.setTypeAnimation(Animation.moveCtrlL());
                         first = false;
+                        turnRight = false;
                     }
                 } else {
-                    if (first && !jumping) {
+                    if (first && !jumping && player.getName() != "jumpStayL" && player.getName() != "jumpStayR" &&
+                            player.getName() != "jumpL" && player.getName() != "jumpR") {
                         player.setTypeAnimation(Animation.moveL());
                         first = false;
+                        turnRight = false;
                     }
                 }
             }
-            turnRight = false;
         }
         if (key == KeyEvent.VK_CONTROL) {
-            if (counterOfCtrl == 1) {
-                halfCut = true;
-                counterOfCtrl++;
-            } else {
-                int iX = (int) x;
-                int iY = (int) y;
-                boolean trueCtrl = true;
-                for (int i = 0; i < b.length; i++) {
-                    if (Collision.playerBlock(new Point(iX + 1, iY), b[i]) ||
-                            Collision.playerBlock(new Point(iX + width / 2, iY), b[i]) ||
-                            Collision.playerBlock(new Point(iX + width, iY), b[i])) {
-                        trueCtrl = false;
+            first = true;
+            if (player.getName() != "jumpStayL" && player.getName() != "jumpStayR" &&
+                    player.getName() != "jumpL" && player.getName() != "jumpR") {
+                if (counterOfCtrl == 1) {
+                    halfCut = true;
+                    counterOfCtrl++;
+                } else {
+                    int iX = (int) x;
+                    int iY = (int) y;
+                    boolean trueCtrl = true;
+                    for (int i = 0; i < b.length; i++) {
+                        if (Collision.playerBlock(new Point(iX + 1, iY), b[i]) ||
+                                Collision.playerBlock(new Point(iX + width / 2, iY), b[i]) ||
+                                Collision.playerBlock(new Point(iX + width, iY), b[i])) {
+                            trueCtrl = false;
+                        }
                     }
-                }
-                if (trueCtrl) {
-                    halfCut = false;
-                    counterOfCtrl = 0;
+                    if (trueCtrl) {
+                        halfCut = false;
+                        counterOfCtrl = 0;
+                    }
                 }
             }
         }
@@ -419,6 +458,7 @@ public class Player {
             }
         }
         if (key == KeyEvent.VK_UP) {
+            first = true;
             if (falling == false) {
                 for (int i = 0; i < l.length; i++) {
                     int iX = (int) x;
@@ -449,26 +489,37 @@ public class Player {
                         if ((Collision.playerBlock(new Point(iX, iY + height + 7), b[i]) ||
                                 Collision.playerBlock(new Point(iX + width / 2, iY + height + 7), b[i]) ||
                                 Collision.playerBlock(new Point(iX + width, iY + height + 7), b[i])) && !halfCut) {
+                            for (int j = 0; j < b.length; j++) {
+                                if (Collision.middleRightAndLeftEdge(iX, iX + width, iY, iY + height / 2 + 10, b[j])) {
+                                    isLong = false;
+                                }
+                            }
+                            if (turnRight) {
+                                player.setTypeAnimation(Animation.jumpR(isLong));
+                            } else {
+                                player.setTypeAnimation(Animation.jumpL(isLong));
+                            }
                             jumping = true;
                             TimerTask task = new TimerTask() {
                                 @Override
                                 public void run() {
+
                                     if (turnRight) {
-                                        player.setTypeAnimation(Animation.stayR());
+                                        player.setTypeAnimation(Animation.jumpStayR());
                                     } else {
-                                        player.setTypeAnimation(Animation.stayL());
+                                        player.setTypeAnimation(Animation.jumpStayL());
                                     }
+                                    cancel();
                                 }
                             };
-                            long delay = 850;
-                            timerJump = new Timer();
-                            timerJump.schedule(task, delay);
-                            if (turnRight) {
-                                player.setTypeAnimation(Animation.jumpR());
-                            } else {
-                                player.setTypeAnimation(Animation.jumpL());
+                            long delay;
+                            if (isLong) {
+                                delay = 650;
+                            } else delay = 750;
+                            if (isLong) {
+                                timerJump = new Timer();
+                                timerJump.schedule(task, delay);
                             }
-
                         }
                     }
 
@@ -493,6 +544,7 @@ public class Player {
         }
 
         if (key == KeyEvent.VK_DOWN) {
+            first = true;
             for (int i = 0; i < l.length; i++) {
                 int iX = (int) x;
                 int iY = (int) y;
@@ -500,6 +552,12 @@ public class Player {
                         Collision.playerLadder(new Point(iX + width, iY), l[i]) ||
                         Collision.playerLadder(new Point(iX, iY + height), l[i]) ||
                         Collision.playerLadder(new Point(iX + width, iY + height), l[i]) && !halfCut) {
+                    if (first) {
+                        if (turnRight) {
+                            player.setTypeAnimation(Animation.stairsR());
+                        } else player.setTypeAnimation(Animation.stairsL());
+                        first = false;
+                    }
                     downLadder = true;
                     beingOnLadder = true;
                 } else {
@@ -509,37 +567,40 @@ public class Player {
                 }
             }
         }
-
     }
 
     public void keyReleased(int key) {
         if (key == KeyEvent.VK_RIGHT) {
             right = false;
+            first = true;
             if (halfCut) {
                 player.setTypeAnimation(Animation.ctrlStayR());
-                first = true;
-            } else if (!jumping) {
+            } else if (!jumping && player.getName() != "jumpStayL" && player.getName() != "jumpStayR" &&
+                    player.getName() != "jumpL" && player.getName() != "jumpR") {
                 player.setTypeAnimation(Animation.stayR());
-                first = true;
             }
         }
         if (key == KeyEvent.VK_LEFT) {
             left = false;
+            first = true;
             if (halfCut) {
                 player.setTypeAnimation(Animation.ctrlStayL());
-                first = true;
-            } else if (!jumping) {
+            } else if (!jumping && player.getName() != "jumpStayL" && player.getName() != "jumpStayR" &&
+                    player.getName() != "jumpL" && player.getName() != "jumpR") {
                 player.setTypeAnimation(Animation.stayL());
-                first = true;
             }
         }
         if (key == KeyEvent.VK_UP) {
+            first = true;
+            isLong = true;
             if (upLadder) {
                 player.setTypeAnimation(Animation.stayStairs());
-                first = true;
             }
             upLadder = false;
         }
-        if (key == KeyEvent.VK_DOWN) downLadder = false;
+        if (key == KeyEvent.VK_DOWN) {
+            first = true;
+            downLadder = false;
+        }
     }
 }

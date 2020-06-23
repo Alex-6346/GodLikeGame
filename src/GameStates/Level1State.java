@@ -84,7 +84,7 @@ public class Level1State extends GameState {
         l[0]= new Ladder(20,500,130,400);
 
         e = new EObjects[1];
-        e[0] = new EObjects(710, 480, eBefore, eAfter, true);
+        e[0] = new EObjects(1340, 70, eBefore, eAfter, true);
     }
 
     @Override
@@ -99,6 +99,10 @@ public class Level1State extends GameState {
         }
         for (int i = 0; i < e.length; i++) {
             e[i].tick();
+        }
+
+        if(e[0].isActivated()){
+            gameStateManager.states.push(new Level2State(gameStateManager));
         }
         player.tickLadder(l);
         player.tickEObjects(e);

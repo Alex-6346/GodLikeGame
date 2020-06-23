@@ -126,8 +126,7 @@ public class Level3State extends GameState {
             b[11] = new Block(1390, 210, 10, 170);
         }
         if (e[3].isActivated()) {
-            //TODO
-            //gameStateManager.states.push(new Level4State(gameStateManager));
+            gameStateManager.states.push(new Level4State(gameStateManager));
         }
         if(player.isFallen){
             //TODO ask menu

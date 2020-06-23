@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1ccfa34-0a3a-4011-a4ce-3efb51dd98d5" name="Default Changelist" comment="adding normal restarts and choosing levels">
-      <change afterPath="$PROJECT_DIR$/images/restartbutton.png" afterDir="false" />
+    <list default="true" id="f1ccfa34-0a3a-4011-a4ce-3efb51dd98d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStates/Level1State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level1State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameStates/ChooseLevelState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/ChooseLevelState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +209,21 @@
       <option name="project" value="LOCAL" />
       <updated>1592894741118</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="adding normal restarts and choosing levels">
+      <created>1592894968071</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1592894968071</updated>
+    </task>
+    <task id="LOCAL-00016" summary="adding normal restarts and choosing levels">
+      <created>1592895046874</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1592895046874</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,30 +269,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="155" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1592471610166" />
-    <state x="387" y="0" key="CommitChangelistDialog2" timestamp="1592894967341">
+    <state x="387" y="0" key="CommitChangelistDialog2" timestamp="1592895046198">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="387" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592894967341" />
+    <state x="387" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592895046198" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1592590140829">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592590140829" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1592895021610">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1592895212056">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592895021610" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1592895021610">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592895212056" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1592895212055">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592895021610" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1592895021610">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592895212055" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1592895212055">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592895021610" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1592895021610">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592895212055" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1592895212056">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592895021610" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592895212056" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1592762531563">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -296,10 +309,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592762531563" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1592894975549">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1592895048398">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592894975549" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592895048398" />
     <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1592741294070">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

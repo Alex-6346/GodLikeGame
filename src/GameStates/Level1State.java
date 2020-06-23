@@ -105,7 +105,7 @@ public class Level1State extends GameState {
         player.tickBlock(b);
 
         if (e[0].isActivated()) {
-            gameStateManager.states.push(new Level3State(gameStateManager));
+            gameStateManager.states.push(new Level2State(gameStateManager));
         }
 
         if(player.isFallen){

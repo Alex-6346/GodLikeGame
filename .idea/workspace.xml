@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1ccfa34-0a3a-4011-a4ce-3efb51dd98d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/Lvl5/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Lvl5/lvl5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Lvl5/torch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Lvl5/torch2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/Lvl5/torchAfter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameStates/Level5State.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStates/Level1State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level1State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameStates/Level3State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameStates/Level3State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Physics/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Physics/Animation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Physics/Collision.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Physics/Collision.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +96,7 @@
       <workItem from="1592568860480" duration="12343000" />
       <workItem from="1592645871399" duration="2574000" />
       <workItem from="1592829555617" duration="14521000" />
-      <workItem from="1592890048380" duration="959000" />
+      <workItem from="1592890048380" duration="1596000" />
     </task>
     <task id="LOCAL-00001" summary="waiting for help in the helpMenu">
       <created>1592391928522</created>
@@ -179,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592765740935</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="adding lvl5&#10;improving animation">
+      <created>1592891043692</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1592891043692</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +203,8 @@
     <MESSAGE value="adding ctrl move animation" />
     <MESSAGE value="added lvl4" />
     <MESSAGE value="adding animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding animation" />
+    <MESSAGE value="adding lvl5&#10;improving animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding lvl5&#10;improving animation" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="168" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1592298927345">
@@ -222,10 +219,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="155" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1592471610166" />
-    <state x="387" y="0" key="CommitChangelistDialog2" timestamp="1592765739972">
+    <state x="387" y="0" key="CommitChangelistDialog2" timestamp="1592891042708">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="387" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592765739972" />
+    <state x="387" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592891042708" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1592590140829">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -262,10 +259,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592762531563" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1592765742838">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1592891045655">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592765742838" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592891045655" />
     <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1592741294070">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

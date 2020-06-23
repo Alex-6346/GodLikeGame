@@ -16,7 +16,6 @@ public class ChooseLevelState extends GameState {
 
     private String[] options = new String[]{"1", "2", "3", "4", "5"};
 
-
     public static boolean lvl2IsUnlocked = true;
 
     public static boolean lvl5IsUnlocked = false;

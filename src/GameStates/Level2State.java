@@ -33,7 +33,7 @@ public class Level2State extends GameState {
     private Image stick, ship;
     private Image empty;
 
-    public static boolean lvl3IsUnlocked;
+    public static boolean lvl2IsUnlocked;
 
     public Level2State(GameStateManager gsm) {
         super(gsm);
@@ -42,8 +42,7 @@ public class Level2State extends GameState {
     @Override
     public void init() {
 
-        lvl3IsUnlocked = true;
-        Player.isLvl3 = true;
+        lvl2IsUnlocked = true;
         playerImage = new Animation(Animation.stayR());
         background = new ImageIcon("images/lvl2/level2Background1.jpg").getImage();
         rocket = new ImageIcon("images/lvl2/rocket.png").getImage();
@@ -147,7 +146,7 @@ public class Level2State extends GameState {
     public void keyPressed(int key) {
         player.keyPressed(key, b, l, e);
         if (key == KeyEvent.VK_R) {
-            gameStateManager.states.push(new Level3State(gameStateManager));
+            gameStateManager.states.push(new Level2State(gameStateManager));
         }
     }
 

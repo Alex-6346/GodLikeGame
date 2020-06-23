@@ -19,6 +19,7 @@ public class Level1State extends GameState {
     private EObjects[] e;
     Animation playerImage;
     private Image background;
+    private Image portal;
 
     public Level1State(GameStateManager gsm) {
         super(gsm);
@@ -29,9 +30,8 @@ public class Level1State extends GameState {
         Player.isLvl1 = true;
         playerImage = new Animation(Animation.stayR());
         Player.isLvl1 = true;
-        Image eBefore = new ImageIcon("images/eBefore.jpg").getImage();
-        Image eAfter = new ImageIcon("images/eAfter.jpg").getImage();
-        background = new ImageIcon("images/level1Background.jpg").getImage();
+        Image portal = new ImageIcon("images/Lvl1/portal.png").getImage();
+        background = new ImageIcon("images/Lvl1/level1Background.jpg").getImage();
         player = new Player(playerImage, 60,130, 100, 500, gameStateManager);
 
         b = new Block[18];
@@ -81,10 +81,10 @@ public class Level1State extends GameState {
 
 
         l = new Ladder[1];
-        l[0]= new Ladder(20,500,130,400);
+        l[0]= new Ladder(2000,2000,0,0);
 
         e = new EObjects[1];
-        e[0] = new EObjects(1340, 70, eBefore, eAfter, true);
+        e[0] = new EObjects(1260, 75, portal, portal, true);
     }
 
     @Override
@@ -100,14 +100,17 @@ public class Level1State extends GameState {
         for (int i = 0; i < e.length; i++) {
             e[i].tick();
         }
-
-        if(e[0].isActivated()){
-            gameStateManager.states.push(new Level2State(gameStateManager));
-        }
         player.tickLadder(l);
         player.tickEObjects(e);
         player.tickBlock(b);
 
+        if (e[0].isActivated()) {
+            gameStateManager.states.push(new Level3State(gameStateManager));
+        }
+
+        if(player.isFallen){
+            gameStateManager.states.push(new Level1State(gameStateManager));
+        }
     }
 
     @Override
@@ -119,7 +122,7 @@ public class Level1State extends GameState {
         }
 
         for (int i = 0; i < e.length; i++) {
-          //  e[i].draw(g);
+           e[i].draw(g);
         }
 
         player.draw(g);
@@ -134,7 +137,7 @@ public class Level1State extends GameState {
         player.keyPressed(key, b, l, e);
 
         if(key == KeyEvent.VK_R){
-            gameStateManager.states.push(new Level1State(gameStateManager));
+            gameStateManager.states.push(new Level4State(gameStateManager));
         }
     }
 

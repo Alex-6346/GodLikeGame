@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 
 import MainPack.Main;
 
+import static GameStates.Level2State.lvl2IsUnlocked;
 import static GameStates.Level3State.lvl3IsUnlocked;
 import static GameStates.Level4State.lvl4IsUnlocked;
 
@@ -16,7 +17,6 @@ public class ChooseLevelState extends GameState {
 
     private String[] options = new String[]{"1", "2", "3", "4", "5"};
 
-    public static boolean lvl2IsUnlocked = true;
 
     public static boolean lvl5IsUnlocked = false;
 
